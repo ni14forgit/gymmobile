@@ -1,19 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+// import Intro from "./screens/Intro";
+// import SupportSystem from "./screens/Spirit/SupportSystem";
+// import Spirit from "./models/Spirit";
+import KnowYou from "./screens/KnowYou";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
+import SupportSystem from "./screens/Spirit/SupportSystem";
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    "redhattext-bold": require("./assets/fonts/RedHatText-Bold.ttf"),
+    "redhattext-medium": require("./assets/fonts/RedHatText-Medium.ttf"),
+    "redhattext-regular": require("./assets/fonts/RedHatText-Regular.ttf"),
+  });
+};
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+  const [dataLoaded, setDataLoaded] = useState(false);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (!dataLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setDataLoaded(true)}
+        onError={(err) => console.log(err)}
+      />
+    );
+  }
+
+  return <KnowYou />;
+}
