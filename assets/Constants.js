@@ -1,6 +1,7 @@
 const Color = {
   blue: "#334E8B",
   white: "#FFFFFF",
+  grey: "rgba(51, 78, 139, 0.25);",
 };
 
 const FontType = {
@@ -8,6 +9,7 @@ const FontType = {
   bold: "redhattext-bold",
   medium: "redhattext-medium",
   button: 18,
+  // inputPressNumber: 18,
   spirit: 32,
   title: 40,
   question: 24,
@@ -17,8 +19,14 @@ const FontType = {
 const TouchOpacity = 0.6;
 
 const Padding = {
-  vertButton: 12,
-  horizButton: 26,
+  login: {
+    vertButton: 12,
+    horizButton: 26,
+  },
+  input: {
+    vertButton: 4,
+    horizButton: 12,
+  },
 };
 
 const Margin = {
@@ -27,9 +35,14 @@ const Margin = {
 
 const Dimension = {
   buttonHeight: 50,
+  circle: 38,
+  maxButtonWidth: "50%",
 };
 
-const BorderRadius = 10;
+const BorderRadius = {
+  button: 10,
+  circle: 19,
+};
 
 const Statements = {
   spirit: {
@@ -50,6 +63,14 @@ const Statements = {
     knowyou: "Now, let’s get to know you",
     lastthings: "Some last things...",
   },
+  description: {
+    datacollect:
+      "The data we’ll collect will help you find fitness buddies and track your progress.",
+    optout: "You’ll always have the option to opt out.",
+  },
+};
+
+const Survey = {
   question: {
     timesaweek: "How many times a week do you usually work out?",
     years: "How many years have you consistently worked out?",
@@ -58,10 +79,9 @@ const Statements = {
     activities: "What activities do you usually participate in?",
     profilepic: "Set a Profile Pic!",
   },
-  description: {
-    datacollect:
-      "The data we’ll collect will help you find fitness buddies and track your progress.",
-    optout: "You’ll always have the option to opt out.",
+  options: {
+    numbers: [1, 2, 3, 4, 5, 6, "7+"],
+    decline: "decline response",
   },
 };
 
@@ -73,5 +93,6 @@ export {
   BorderRadius,
   Statements,
   Margin,
+  Survey,
   TouchOpacity,
 };

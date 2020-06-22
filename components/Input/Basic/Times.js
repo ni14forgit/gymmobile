@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity, View, StyleSheet, Text } from "react-native";
 import {
   Color,
   FontType,
@@ -7,32 +7,31 @@ import {
   Dimension,
   BorderRadius,
   TouchOpacity,
-} from "../../assets/Constants";
+} from "../../../assets/Constants";
 
-const FilledButton = (props) => {
+const Times = (props) => {
   const styles = StyleSheet.create({
     text: {
-      color: Color.white,
+      color: props.selected ? Color.white : Color.blue,
       fontFamily: FontType.medium,
       fontSize: FontType.button,
     },
     button: {
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: Color.blue,
-      height: Dimension.buttonHeight,
-      // paddingHorizontal: Padding.horizButton,
-      paddingHorizontal: props.horizpadding,
-      borderRadius: BorderRadius.button,
-    },
-    container: {
-      maxWidth: Dimension.maxButtonWidth,
+      backgroundColor: props.selected ? Color.blue : Color.grey,
+
+      height: Dimension.circle,
+      width: Dimension.circle,
+      borderRadius: BorderRadius.circle,
+      borderColor: props.selected ? Color.blue : Color.grey,
+      borderWidth: props.selected ? Color.blue : 0,
     },
   });
 
   return (
     <TouchableOpacity
-      style={[styles.container, props.style]}
+      style={props.style}
       activeOpacity={TouchOpacity}
       onPress={props.onPress}
     >
@@ -43,4 +42,4 @@ const FilledButton = (props) => {
   );
 };
 
-export default FilledButton;
+export default Times;

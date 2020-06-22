@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity, View, StyleSheet, Text } from "react-native";
 import {
   Color,
   FontType,
@@ -7,35 +7,30 @@ import {
   Dimension,
   BorderRadius,
   TouchOpacity,
-} from "../../assets/Constants";
+} from "../../../assets/Constants";
 
-const OutlinedButton = (props) => {
+const Decline = (props) => {
   const styles = StyleSheet.create({
     text: {
-      color: Color.blue,
+      color: props.selected ? Color.white : Color.blue,
       fontFamily: FontType.regular,
       fontSize: FontType.button,
     },
     button: {
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: Color.white,
-      height: Dimension.buttonHeight,
-      // paddingHorizontal: Padding.horizButton,
-      paddingHorizontal: props.horizpadding,
+      backgroundColor: props.selected ? Color.blue : Color.grey,
+      height: Dimension.circle,
+      paddingHorizontal: Padding.input.horizButton,
       borderRadius: BorderRadius.button,
-      borderColor: Color.blue,
-      borderWidth: 2,
-    },
-    spacing: {
-      paddingLeft: 20,
-      paddingRight: "20%",
+      borderColor: props.selected ? Color.blue : Color.grey,
+      borderWidth: props.selected ? Color.blue : 0,
     },
     container: {
-      // alignSelf: "center",
-      maxWidth: Dimension.maxButtonWidth,
+      maxWidth: "45%",
     },
   });
+
   return (
     <TouchableOpacity
       style={[styles.container, props.style]}
@@ -49,4 +44,4 @@ const OutlinedButton = (props) => {
   );
 };
 
-export default OutlinedButton;
+export default Decline;
