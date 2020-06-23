@@ -1,7 +1,13 @@
 import React from "react";
 import { Image, StyleSheet, View, Text } from "react-native";
 import FilledButton from "../components/Button/FilledButton";
-import { Color, FontType, Statements, Margin } from "./../assets/Constants";
+import {
+  Color,
+  FontType,
+  Statements,
+  Margin,
+  Dimension,
+} from "./../assets/Constants";
 import TextButton from "../components/Button/TextButton";
 import SpiritTitle from "../components/Text/SpiritTitle";
 
@@ -28,8 +34,15 @@ const Spirit = (props) => {
       alignSelf: "center",
       marginBottom: "10%",
     },
+    filledbutton: {
+      position: "absolute",
+      minWidth: Dimension.button.continue.width,
+      maxWidth: Dimension.button.continue.width,
+      // bottom: Margin.buttonBottom,
+    },
+
     rowContainer: {
-      flex: 1,
+      // flex: 1,
       position: "absolute",
       bottom: Margin.buttonBottom,
       alignSelf: "center",

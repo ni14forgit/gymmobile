@@ -1,12 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import {
-  Color,
-  FontType,
-  Padding,
-  Dimension,
-  BorderRadius,
-} from "../../assets/Constants";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Color, FontType } from "../../assets/Constants";
 
 const TextButton = (props) => {
   return (

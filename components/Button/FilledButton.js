@@ -21,12 +21,12 @@ const FilledButton = (props) => {
       alignItems: "center",
       backgroundColor: Color.blue,
       height: Dimension.buttonHeight,
-      // paddingHorizontal: Padding.horizButton,
       paddingHorizontal: props.horizpadding,
       borderRadius: BorderRadius.button,
     },
     container: {
-      maxWidth: Dimension.maxButtonWidth,
+      // maxWidth: Dimension.maxButtonWidth,
+      // maxWidth: Dimension.button.continue.minwidth,
     },
   });
 

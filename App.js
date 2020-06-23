@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Intro from "./screens/Intro";
-// import SupportSystem from "./screens/Spirit/SupportSystem";
+
 // import Spirit from "./models/Spirit";
 // import KnowYou from "./screens/KnowYou";
 import GoalsChar from "./screens/Setup/GoalsChar";

@@ -9,6 +9,7 @@ const FontType = {
   bold: "redhattext-bold",
   medium: "redhattext-medium",
   button: 18,
+  small: 20,
   // inputPressNumber: 18,
   spirit: 32,
   title: 40,
@@ -30,18 +31,44 @@ const Padding = {
 };
 
 const Margin = {
-  buttonBottom: "12%",
+  buttonBottom: "8%",
+  left: "5%",
+  right: "5%",
+};
+
+const Ratio = {
+  slider: 7 / 12,
 };
 
 const Dimension = {
   buttonHeight: 50,
   circle: 38,
   maxButtonWidth: "50%",
+
+  button: {
+    continue: {
+      width: 150,
+    },
+  },
+
+  slider: {
+    thumb: {
+      height: 30,
+      width: 30,
+    },
+    track: {
+      height: 15,
+    },
+  },
 };
 
 const BorderRadius = {
   button: 10,
   circle: 19,
+  slider: {
+    thumb: 10,
+    track: 10,
+  },
 };
 
 const Statements = {
@@ -78,10 +105,21 @@ const Survey = {
     characteristics: "Which characteristics best define you?",
     activities: "What activities do you usually participate in?",
     profilepic: "Set a Profile Pic!",
+    age: "Age",
+    weight: "Weight",
   },
   options: {
-    numbers: [1, 2, 3, 4, 5, 6, "7+"],
+    numbers7plus: [1, 2, 3, 4, 5, 6, "7+"],
+    numbers5plus: [1, 2, 3, 4, "5+"],
     decline: "decline response",
+    age: {
+      min: 17,
+      max: 70,
+    },
+    weight: {
+      min: 100,
+      max: 300,
+    },
   },
 };
 
@@ -95,4 +133,5 @@ export {
   Margin,
   Survey,
   TouchOpacity,
+  Ratio,
 };
