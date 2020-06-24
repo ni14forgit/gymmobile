@@ -1,12 +1,12 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet, SafeAreaView } from "react-native";
 import Modifiable from "../components/Text/ModifiableText";
 import { Statements, FontType, Margin } from "../assets/Constants";
 import FilledButton from "../components/Button/FilledButton";
 
 const KnowYou = () => {
   return (
-    <View style={styles.outer}>
+    <SafeAreaView style={styles.outer}>
       <View style={styles.container}>
         <View style={styles.first}>
           <Modifiable
@@ -32,7 +32,7 @@ const KnowYou = () => {
         </View>
       </View>
       <FilledButton style={styles.button} text="Start" />
-    </View>
+    </SafeAreaView>
   );
 };
 

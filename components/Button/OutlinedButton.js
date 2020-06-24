@@ -21,24 +21,15 @@ const OutlinedButton = (props) => {
       alignItems: "center",
       backgroundColor: Color.white,
       height: Dimension.buttonHeight,
-      // paddingHorizontal: Padding.horizButton,
-      paddingHorizontal: props.horizpadding,
+      paddingHorizontal: Padding.default.horizButton,
       borderRadius: BorderRadius.button,
       borderColor: Color.blue,
       borderWidth: 2,
     },
-    spacing: {
-      paddingLeft: 20,
-      paddingRight: "20%",
-    },
-    container: {
-      // alignSelf: "center",
-      maxWidth: Dimension.maxButtonWidth,
-    },
   });
   return (
     <TouchableOpacity
-      style={[styles.container, props.style]}
+      style={props.style}
       activeOpacity={TouchOpacity}
       onPress={props.onPress}
     >

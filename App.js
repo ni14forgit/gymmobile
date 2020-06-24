@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-// import Intro from "./screens/Intro";
+import Intro from "./screens/Intro";
 
 // import Spirit from "./models/Spirit";
-// import KnowYou from "./screens/KnowYou";
+import KnowYou from "./screens/KnowYou";
 import GoalsChar from "./screens/Setup/GoalsChar";
+import GatherInfo from "./screens/Setup/GatherInfo";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import SupportSystem from "./screens/Spirit/SupportSystem";
+import Progress from "./screens/Spirit/Progress";
 
 const fetchFonts = () => {
   return Font.loadAsync({

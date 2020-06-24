@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View, Text } from "react-native";
+import { Image, StyleSheet, View, SafeAreaView } from "react-native";
 import FilledButton from "../components/Button/FilledButton";
 import {
   Color,
@@ -19,9 +19,8 @@ const Spirit = (props) => {
     container: {
       flexDirection: "column",
       flex: 1,
-      justifyContent: "flex-start",
-      // alignItems: "center",
-      paddingTop: "20%",
+      justifyContent: "center",
+      alignItems: "center",
     },
     image: {
       width: "90%",
@@ -32,42 +31,36 @@ const Spirit = (props) => {
     text: {
       width: "90%",
       alignSelf: "center",
-      marginBottom: "10%",
     },
-    filledbutton: {
-      position: "absolute",
-      minWidth: Dimension.button.continue.width,
-      maxWidth: Dimension.button.continue.width,
-      // bottom: Margin.buttonBottom,
-    },
-
     rowContainer: {
-      // flex: 1,
-      position: "absolute",
-      bottom: Margin.buttonBottom,
+      justifyContent: props.back ? "space-between" : "center",
       alignSelf: "center",
+      alignItems: "center",
+      // borderColor: "blue",
+      // borderWidth: 2,
       flexDirection: "row",
-      justifyContent: props.back ? "space-around" : "center",
+      width: "80%",
     },
-    textButton: {
-      marginTop: 12,
-      marginRight: "35%",
+    bottom: {
+      height: Dimension.introButton.height,
+      // borderColor: "blue",
+      // borderWidth: 2,
     },
   });
 
   return (
-    <View style={styles.outer}>
+    <SafeAreaView style={styles.outer}>
       <View style={styles.container}>
         <Image source={props.image} style={styles.image} resizeMode="contain" />
         <SpiritTitle style={styles.text} text={props.text} />
       </View>
-      <View style={styles.rowContainer}>
-        {props.back ? (
-          <TextButton style={styles.textButton} text={Statements.button.back} />
-        ) : null}
-        <FilledButton style={styles.filledbutton} text="Continue" />
+      <View style={styles.bottom}>
+        <View style={styles.rowContainer}>
+          {props.back ? <TextButton text={Statements.button.back} /> : null}
+          <FilledButton text="Continue" />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

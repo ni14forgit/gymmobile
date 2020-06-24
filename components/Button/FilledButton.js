@@ -21,18 +21,14 @@ const FilledButton = (props) => {
       alignItems: "center",
       backgroundColor: Color.blue,
       height: Dimension.buttonHeight,
-      paddingHorizontal: props.horizpadding,
+      paddingHorizontal: Padding.default.horizButton,
       borderRadius: BorderRadius.button,
-    },
-    container: {
-      // maxWidth: Dimension.maxButtonWidth,
-      // maxWidth: Dimension.button.continue.minwidth,
     },
   });
 
   return (
     <TouchableOpacity
-      style={[styles.container, props.style]}
+      style={props.style}
       activeOpacity={TouchOpacity}
       onPress={props.onPress}
     >

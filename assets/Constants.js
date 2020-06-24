@@ -22,11 +22,19 @@ const TouchOpacity = 0.6;
 const Padding = {
   login: {
     vertButton: 12,
-    horizButton: 26,
+    horizButton: 23,
   },
   input: {
     vertButton: 4,
     horizButton: 12,
+  },
+  goalscharbutton: {
+    width: 10,
+    height: 10,
+  },
+
+  default: {
+    horizButton: 23,
   },
 };
 
@@ -34,6 +42,13 @@ const Margin = {
   buttonBottom: "8%",
   left: "5%",
   right: "5%",
+  button: {
+    textButtonRight: "35%",
+  },
+
+  IntroPage: {
+    left: "10%",
+  },
 };
 
 const Ratio = {
@@ -60,6 +75,15 @@ const Dimension = {
       height: 15,
     },
   },
+
+  qnavigator: {
+    height: "12%",
+    width: "80%",
+  },
+
+  introButton: {
+    height: "15%",
+  },
 };
 
 const BorderRadius = {
@@ -69,6 +93,7 @@ const BorderRadius = {
     thumb: 10,
     track: 10,
   },
+  goalschar: 20,
 };
 
 const Statements = {
@@ -89,6 +114,7 @@ const Statements = {
   title: {
     knowyou: "Now, let’s get to know you",
     lastthings: "Some last things...",
+    main: `Fitness is \nYour\nCommunity.`,
   },
   description: {
     datacollect:

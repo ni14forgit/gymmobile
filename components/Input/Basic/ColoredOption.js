@@ -1,15 +1,14 @@
+import { Color } from "../../../assets/Constants";
 import React from "react";
-import { TouchableOpacity, View, StyleSheet, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 import {
-  Color,
+  BorderRadius,
   FontType,
   Padding,
-  Dimension,
-  BorderRadius,
   TouchOpacity,
 } from "../../../assets/Constants";
 
-const Times = (props) => {
+const ColoredOption = (props) => {
   const styles = StyleSheet.create({
     text: {
       color: props.selected ? Color.white : Color.blue,
@@ -17,15 +16,14 @@ const Times = (props) => {
       fontSize: FontType.button,
     },
     button: {
-      justifyContent: "center",
+      //   justifyContent: "center",
       alignItems: "center",
-      backgroundColor: props.selected ? Color.blue : Color.grey,
-
-      height: Dimension.circle,
-      width: Dimension.circle,
-      borderRadius: BorderRadius.circle,
-      // borderColor: props.selected ? Color.blue : Color.grey,
-      // borderWidth: props.selected ? Color.blue : 0,
+      backgroundColor: props.selected ? Color.blue : Color.white,
+      paddingHorizontal: Padding.goalscharbutton.width,
+      paddingVertical: Padding.goalscharbutton.height,
+      borderRadius: BorderRadius.goalschar,
+      borderColor: props.selected ? null : Color.blue,
+      borderWidth: 2,
     },
   });
 
@@ -42,4 +40,4 @@ const Times = (props) => {
   );
 };
 
-export default Times;
+export default ColoredOption;

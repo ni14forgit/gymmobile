@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Color } from "../../assets/Constants";
+import { Color } from "../../../assets/Constants";
 
 const Dot = (props) => {
   const stylesDot = StyleSheet.create({
@@ -19,7 +19,7 @@ const DotsTracker = (props) => {
   const items = [];
 
   for (var i = 0; i < props.num; i++) {
-    items.push(<Dot selected={props.track === i ? true : false} />);
+    items.push(<Dot selected={props.selected === i ? true : false} />);
   }
 
   return <View style={stylesTracker.container}>{items}</View>;
@@ -30,6 +30,7 @@ const stylesTracker = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     // flex: 1,
+    // position: "absolute",
   },
 });
 
