@@ -11,7 +11,7 @@ const BasicQuestion = (props) => {
       // flex: 1,
       flexDirection: "column",
       justifyContent: "center",
-      height: props.height,
+      // height: props.height,
       // borderColor: "black",
       // borderWidth: 4,
     },

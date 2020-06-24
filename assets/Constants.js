@@ -30,7 +30,7 @@ const Padding = {
   },
   goalscharbutton: {
     width: 10,
-    height: 10,
+    height: 6,
   },
 
   default: {
@@ -128,7 +128,7 @@ const Survey = {
     timesaweek: "How many times a week do you usually work out?",
     years: "How many years have you consistently worked out?",
     goals: "What are your goals?",
-    characteristics: "Which characteristics best define you?",
+    characteristics: "Tell us about yourself?",
     activities: "What activities do you usually participate in?",
     profilepic: "Set a Profile Pic!",
     age: "Age",
@@ -146,6 +146,34 @@ const Survey = {
       min: 100,
       max: 300,
     },
+    goals: [
+      "improve self confidence",
+      "find community",
+      "reduce body fat %",
+      "be active",
+      "lift greater amounts",
+      "maintain fitness schedule",
+      "try new sports",
+      "track my progress",
+      "improve self confidence",
+      "find community",
+      "reduce body fat %",
+      "be active",
+      "lift greater amounts",
+      "maintain fitness schedule",
+      "try new sports",
+      "track my progress",
+    ],
+    characteristics: [
+      "improve self confidence",
+      "find community",
+      "reduce body fat %",
+      "be active",
+      "lift greater amounts",
+      "maintain fitness schedule",
+      "try new sports",
+      "track my progress",
+    ],
   },
 };
 

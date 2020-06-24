@@ -1,14 +1,30 @@
-import React, { useState } from "react";
-import { View, StyleSheet, SafeAreaView } from "react-native";
+import React from "react";
+import { View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import ColoredOptions from "../../components/Input/Basic/ColoredOption";
 import { Survey, Margin, Statements, Dimension } from "../../assets/Constants";
 import QNavigator from "../../components/Misc/QNavigator";
+import ScrollQuestion from "../../components/Input/ScrollQuestion";
 
 const GoalsChar = () => {
   return (
-    <View style={styles.container}>
-      <ColoredOptions text="hihihihihih" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollQuestion
+        options={Survey.options.goals}
+        question={Survey.question.goals}
+      />
+      <ScrollQuestion
+        options={Survey.options.characteristics}
+        question={Survey.question.characteristics}
+      />
+      <QNavigator
+        selected={0}
+        numpages={4}
+        textbuttontext={Statements.button.back}
+        filledbuttontext={Statements.button.continue}
+        // textbuttonstyle={}
+        filledbuttonstyle={styles.filledbutton}
+      />
+    </SafeAreaView>
   );
 };
 
@@ -16,11 +32,11 @@ const GoalsChar = () => {
 
 const styles = StyleSheet.create({
   container: {
+    marginLeft: Margin.left,
+    marginRight: Margin.right,
     flex: 1,
-    justifyContent: "center",
-    alignSelf: "center",
     flexDirection: "column",
-    marginTop: "10%",
+    justifyContent: "space-evenly",
   },
 });
 
