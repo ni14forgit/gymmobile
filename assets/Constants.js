@@ -2,6 +2,7 @@ const Color = {
   blue: "#334E8B",
   white: "#FFFFFF",
   grey: "rgba(51, 78, 139, 0.25);",
+  black: "black",
 };
 
 const FontType = {
@@ -9,6 +10,7 @@ const FontType = {
   bold: "redhattext-bold",
   medium: "redhattext-medium",
   button: 18,
+  activityCard: 18,
   small: 20,
   // inputPressNumber: 18,
   spirit: 32,
@@ -94,6 +96,7 @@ const BorderRadius = {
     track: 10,
   },
   goalschar: 20,
+  activityCard: 10,
 };
 
 const Statements = {

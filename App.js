@@ -4,6 +4,7 @@ import Intro from "./screens/Intro";
 // import Spirit from "./models/Spirit";
 import KnowYou from "./screens/KnowYou";
 import GoalsChar from "./screens/Setup/GoalsChar";
+import Activities from "./screens/Setup/Activities";
 import GatherInfo from "./screens/Setup/GatherInfo";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
@@ -31,5 +32,5 @@ export default function App() {
     );
   }
 
-  return <GoalsChar />;
+  return <Activities />;
 }
