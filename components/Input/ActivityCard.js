@@ -7,16 +7,15 @@ import {
   TouchOpacity,
 } from "../../assets/Constants";
 import ModifiableText from "../Text/ModifiableText";
-import Swimming from "../../assets/Icons";
+import IconTemplate from "../../assets/IconTemplate";
 
 // PROBABLY NEED TO USE FLATLIST FOR THIS
 
 const ActivityCard = (props) => {
   const styles = StyleSheet.create({
     container: {
-      // height: 230,
-      height: "26%",
-      width: "40%",
+      // height: 300,
+      // width: 280,
       alignItems: "center",
       justifyContent: "flex-start",
       flexDirection: "column",
@@ -34,12 +33,21 @@ const ActivityCard = (props) => {
     },
   });
   return (
-    <TouchableOpacity activeOpacity={TouchOpacity} style={styles.container}>
-      <Swimming color={props.selected ? Color.white : Color.blue} />
+    <TouchableOpacity
+      onPress={props.onPress}
+      activeOpacity={0.95}
+      style={[styles.container, props.style]}
+    >
+      <IconTemplate
+        color={props.selected ? Color.white : Color.blue}
+        height="75%"
+        width="75%"
+        activityicon={props.activityicon}
+      />
       <ModifiableText
         size={FontType.activityCard}
         family={FontType.bold}
-        text="Running"
+        text={props.title}
         style={props.selected ? styles.whiteselected : null}
       />
     </TouchableOpacity>

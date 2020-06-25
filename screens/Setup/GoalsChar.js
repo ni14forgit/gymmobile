@@ -22,7 +22,7 @@ const GoalsChar = () => {
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         // textbuttonstyle={}
-        filledbuttonstyle={styles.filledbutton}
+        // filledbuttonstyle={styles.filledbutton}
       />
     </SafeAreaView>
   );

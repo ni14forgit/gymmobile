@@ -1,3 +1,13 @@
+import {
+  BasketballSVG,
+  SwimmingSVG,
+  WeightliftingSVG,
+  RunningSVG,
+  AerobicsSVG,
+  SoccerSVG,
+  VolleyBallSVG,
+  WallClimbingSVG,
+} from "./Icons/ActivitySVG";
 const Color = {
   blue: "#334E8B",
   white: "#FFFFFF",
@@ -180,6 +190,52 @@ const Survey = {
   },
 };
 
+const Icon = {
+  activity: [
+    {
+      id: "basketball",
+      title: "Basketball",
+      svg: BasketballSVG,
+    },
+    {
+      id: "weighttraining",
+      title: "Weight Training",
+      svg: WeightliftingSVG,
+    },
+    {
+      id: "wallclimbing",
+      title: "Wall Climbing",
+      svg: WallClimbingSVG,
+    },
+    {
+      id: "running",
+      title: "Running",
+      svg: RunningSVG,
+    },
+    {
+      id: "swimming",
+      title: "Swimming",
+      svg: SwimmingSVG,
+    },
+    {
+      id: "aerobics",
+      title: "Aerobics",
+      svg: AerobicsSVG,
+    },
+    {
+      id: "soccer",
+      title: "Soccer",
+      svg: SoccerSVG,
+    },
+    {
+      id: "volleyball",
+      title: "Volleyball",
+      svg: VolleyBallSVG,
+    },
+  ],
+  storeitem: {},
+};
+
 export {
   Color,
   FontType,
@@ -191,4 +247,5 @@ export {
   Survey,
   TouchOpacity,
   Ratio,
+  Icon,
 };
