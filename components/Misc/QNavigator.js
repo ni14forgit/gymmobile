@@ -7,7 +7,7 @@ import { Dimension } from "../../assets/Constants";
 
 const QNavigator = (props) => {
   return (
-    <View style={styles.bottom}>
+    <View style={[styles.bottom, props.style]}>
       <DotsTracker selected={props.selected} num={props.numpages} />
       <View style={styles.bottomRowContainer}>
         <TextButton style={props.textbuttonstyle} text={props.textbuttontext} />

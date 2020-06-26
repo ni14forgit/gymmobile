@@ -21,8 +21,6 @@ const GoalsChar = () => {
         numpages={4}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
-        // textbuttonstyle={}
-        // filledbuttonstyle={styles.filledbutton}
       />
     </SafeAreaView>
   );
