@@ -26,6 +26,7 @@ const FontType = {
   spirit: 32,
   title: 40,
   question: 24,
+  namepassword: 24,
   description: 24,
 };
 
@@ -104,6 +105,10 @@ const BorderRadius = {
   slider: {
     thumb: 10,
     track: 10,
+  },
+  profilepic: {
+    container: 24,
+    image: 20,
   },
   goalschar: 20,
   activityCard: 10,

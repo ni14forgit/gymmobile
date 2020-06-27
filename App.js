@@ -10,6 +10,8 @@ import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import SupportSystem from "./screens/Spirit/SupportSystem";
 import Progress from "./screens/Spirit/Progress";
+import ImgPicker from "./components/Input/ImagePicker";
+import Account from "./screens/Setup/Account";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -32,5 +34,5 @@ export default function App() {
     );
   }
 
-  return <Activities />;
+  return <Account />;
 }
