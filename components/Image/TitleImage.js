@@ -14,7 +14,10 @@ const TitleImage = (props) => {
 const styles = StyleSheet.create({
   image: {
     width: "100%",
-    height: "60%",
+    height: "50%",
+    // borderColor: "red",
+    // borderWidth: 2,
+    // flex: 1,
   },
 });
 

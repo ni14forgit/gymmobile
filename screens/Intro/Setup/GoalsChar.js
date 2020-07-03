@@ -1,11 +1,15 @@
 import React from "react";
 import { View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import ColoredOptions from "../../components/Input/Basic/ColoredOption";
-import { Survey, Margin, Statements, Dimension } from "../../assets/Constants";
-import QNavigator from "../../components/Misc/QNavigator";
-import ScrollQuestion from "../../components/Input/ScrollQuestion";
+import ColoredOptions from "../../../components/Input/Basic/ColoredOption";
+import { Survey, Margin, Statements, Screens } from "../../../assets/Constants";
+import QNavigator from "../../../components/Misc/QNavigator";
+import ScrollQuestion from "../../../components/Input/ScrollQuestion";
 
-const GoalsChar = () => {
+const GoalsChar = (props) => {
+  const forward = () => {
+    props.navigation.navigate(Screens.ACTIVITIES);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollQuestion
@@ -21,6 +25,7 @@ const GoalsChar = () => {
         numpages={4}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
+        nextScreenFunc={forward}
       />
     </SafeAreaView>
   );

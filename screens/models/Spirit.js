@@ -1,15 +1,15 @@
 import React from "react";
 import { Image, StyleSheet, View, SafeAreaView } from "react-native";
-import FilledButton from "../components/Button/FilledButton";
+import FilledButton from "../../components/Button/FilledButton";
 import {
   Color,
   FontType,
   Statements,
   Margin,
   Dimension,
-} from "./../assets/Constants";
-import TextButton from "../components/Button/TextButton";
-import SpiritTitle from "../components/Text/SpiritTitle";
+} from "../../assets/Constants";
+import TextButton from "../../components/Button/TextButton";
+import SpiritTitle from "../../components/Text/SpiritTitle";
 
 const Spirit = (props) => {
   const styles = StyleSheet.create({

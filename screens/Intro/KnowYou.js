@@ -1,10 +1,14 @@
 import React from "react";
 import { View, StyleSheet, SafeAreaView } from "react-native";
-import Modifiable from "../components/Text/ModifiableText";
-import { Statements, FontType, Margin } from "../assets/Constants";
-import FilledButton from "../components/Button/FilledButton";
+import Modifiable from "../../components/Text/ModifiableText";
+import { Statements, FontType, Margin, Screens } from "../../assets/Constants";
+import FilledButton from "../../components/Button/FilledButton";
 
-const KnowYou = () => {
+const KnowYou = (props) => {
+  const forward = () => {
+    props.navigation.navigate(Screens.GATHERINFO);
+  };
+
   return (
     <SafeAreaView style={styles.outer}>
       <View style={styles.container}>
@@ -31,7 +35,7 @@ const KnowYou = () => {
           />
         </View>
       </View>
-      <FilledButton style={styles.button} text="Start" />
+      <FilledButton style={styles.button} text="Start" onPress={forward} />
     </SafeAreaView>
   );
 };

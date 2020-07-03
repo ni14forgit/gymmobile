@@ -1,16 +1,17 @@
 import React, { useState, useCallback } from "react";
 import { View, SafeAreaView, StyleSheet, FlatList } from "react-native";
-import ActivityCard from "../../components/Input/ActivityCard";
-import ModifiableText from "./../../components/Text/ModifiableText";
+import ActivityCard from "../../../components/Input/ActivityCard";
+import ModifiableText from "../../../components/Text/ModifiableText";
 import {
   Icon,
   Statements,
   FontType,
   Margin,
   Survey,
-} from "../../assets/Constants";
+  Screens,
+} from "../../../assets/Constants";
 import { Dimensions } from "react-native";
-import QNavigator from "../../components/Misc/QNavigator";
+import QNavigator from "../../../components/Misc/QNavigator";
 
 const DATA = Icon.activity;
 
@@ -26,7 +27,11 @@ function Item({ id, title, activityicon, selected, onSelect }) {
   );
 }
 
-const Activities = () => {
+const Activities = (props) => {
+  const forward = () => {
+    props.navigation.navigate(Screens.PROFILEPIC);
+  };
+
   const [selected, setSelected] = useState(new Map());
 
   const onSelect = useCallback(
@@ -71,6 +76,7 @@ const Activities = () => {
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         style={styles.qnavigator}
+        nextScreenFunc={forward}
       />
     </SafeAreaView>
   );

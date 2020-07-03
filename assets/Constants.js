@@ -8,11 +8,13 @@ import {
   VolleyBallSVG,
   WallClimbingSVG,
 } from "./Icons/ActivitySVG";
+
 const Color = {
   blue: "#334E8B",
   white: "#FFFFFF",
   grey: "rgba(51, 78, 139, 0.25);",
   black: "black",
+  background: "#FFFFFF",
 };
 
 const FontType = {
@@ -73,6 +75,13 @@ const Dimension = {
   circle: 38,
   maxButtonWidth: "50%",
 
+  navigation: {
+    menuButton: {
+      height: 20,
+      width: 20,
+    },
+  },
+
   button: {
     continue: {
       width: 150,
@@ -128,6 +137,7 @@ const Statements = {
     signup: "Sign Up",
     continue: "Continue",
     back: "Back",
+    done: "I'm Done!",
   },
   title: {
     knowyou: "Now, let’s get to know you",
@@ -241,7 +251,21 @@ const Icon = {
   storeitem: {},
 };
 
+const Screens = {
+  INTRO: "Intro",
+  KNOWYOU: "KnowYou",
+  GROWTH: "Growth",
+  PROGRESS: "Progress",
+  SUPPORTSYSTEM: "SupportSystem",
+  GATHERINFO: "GatherInfo",
+  GOALSCHAR: "GoalsChar",
+  ACTIVITIES: "Activities",
+  PROFILEPIC: "ProfilePic",
+  ACCOUNT: "Account",
+};
+
 export {
+  Screens,
   Color,
   FontType,
   Padding,

@@ -1,19 +1,24 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet } from "react-native";
-import QNavigator from "../../components/Misc/QNavigator";
+import QNavigator from "../../../components/Misc/QNavigator";
 
-import ModifiableText from "../../components/Text/ModifiableText";
+import ModifiableText from "../../../components/Text/ModifiableText";
 
 import {
   FontType,
   Statements,
   Color,
   BorderRadius,
-} from "../../assets/Constants";
+  Screens,
+} from "../../../assets/Constants";
 
-import ImgagePicker from "../../components/Input/ImagePicker";
+import ImgagePicker from "../../../components/Input/ImagePicker";
 
-const ProfilePic = () => {
+const ProfilePic = (props) => {
+  const forward = () => {
+    props.navigation.navigate(Screens.ACCOUNT);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ModifiableText
@@ -31,6 +36,7 @@ const ProfilePic = () => {
         numpages={4}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
+        nextScreenFunc={forward}
       />
     </SafeAreaView>
   );

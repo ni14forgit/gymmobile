@@ -10,10 +10,15 @@ const QNavigator = (props) => {
     <View style={[styles.bottom, props.style]}>
       <DotsTracker selected={props.selected} num={props.numpages} />
       <View style={styles.bottomRowContainer}>
-        <TextButton style={props.textbuttonstyle} text={props.textbuttontext} />
+        <TextButton
+          style={props.textbuttonstyle}
+          text={props.textbuttontext}
+          onPress={props.prevScreenFunc}
+        />
         <FilledButton
           style={props.filledbuttonstyle}
           text={props.filledbuttontext}
+          onPress={props.nextScreenFunc}
         />
       </View>
     </View>

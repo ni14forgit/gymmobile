@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { View, StyleSheet, SafeAreaView } from "react-native";
-import BasicQuestion from "../../components/Input/BasicQuestion";
-import SliderInput from "../../components/Input/Basic/Slider";
-import { Survey, Margin, Statements, Dimension } from "../../assets/Constants";
-import QNavigator from "../../components/Misc/QNavigator";
+import BasicQuestion from "../../../components/Input/BasicQuestion";
+import SliderInput from "../../../components/Input/Basic/Slider";
+import { Survey, Margin, Statements, Screens } from "../../../assets/Constants";
+import QNavigator from "../../../components/Misc/QNavigator";
 
-const GatherInfo = () => {
+const GatherInfo = (props) => {
+  const forward = () => {
+    props.navigation.navigate(Screens.GOALSCHAR);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.tophalf}>
@@ -43,7 +47,8 @@ const GatherInfo = () => {
         numpages={4}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
-        // textbuttonstyle={}
+        nextScreenFunc={forward}
+        // prevScreenFunc={}
         filledbuttonstyle={styles.filledbutton}
       />
     </SafeAreaView>

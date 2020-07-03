@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import Intro from "./screens/Intro";
 
 // import Spirit from "./models/Spirit";
-import KnowYou from "./screens/KnowYou";
-import GoalsChar from "./screens/Setup/GoalsChar";
-import Activities from "./screens/Setup/Activities";
-import GatherInfo from "./screens/Setup/GatherInfo";
+
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
-import SupportSystem from "./screens/Spirit/SupportSystem";
-import Progress from "./screens/Spirit/Progress";
-import ImgPicker from "./components/Input/ImagePicker";
-import Account from "./screens/Setup/Account";
+
+import IntroNavigator from "./navigation/IntroNavigator";
+import Drawer from "./navigation/Drawer";
+
+import MainTemplate from "./screens/models/MainTemplate";
+import BottomHeader from "./components/Navigation/BottomHeader";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStore, combineReducers } from "redux";
+import navigationReducer from "./store/reducers/navigation";
+import { Provider } from "react-redux";
+// import { createStackNavigator } from "@react-navigation/stack";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -20,6 +24,11 @@ const fetchFonts = () => {
     "redhattext-regular": require("./assets/fonts/RedHatText-Regular.ttf"),
   });
 };
+
+const rootReducer = combineReducers({
+  navigation: navigationReducer,
+});
+const store = createStore(rootReducer);
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -34,5 +43,13 @@ export default function App() {
     );
   }
 
-  return <Account />;
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        {/* <Drawer /> */}
+        <MainTemplate />
+        {/* <BottomHeader /> */}
+      </NavigationContainer>
+    </Provider>
+  );
 }
