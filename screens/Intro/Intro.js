@@ -14,7 +14,7 @@ import FilledButton from "../../components/Button/FilledButton";
 
 const Intro = (props) => {
   const forward = () => {
-    props.navigation.navigate(Screens.KNOWYOU);
+    props.navigation.navigate(Screens.SUPPORTSYSTEM);
   };
 
   return (

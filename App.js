@@ -9,7 +9,11 @@ import IntroNavigator from "./navigation/IntroNavigator";
 import Drawer from "./navigation/Drawer";
 
 import MainTemplate from "./screens/models/MainTemplate";
-import BottomHeader from "./components/Navigation/BottomHeader";
+import BottomHeader from "./navigation/BottomHeader";
+
+import Progress from "./screens/Progress/Progress";
+
+import Test from "./Test";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStore, combineReducers } from "redux";
@@ -47,8 +51,11 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         {/* <Drawer /> */}
-        <MainTemplate />
+        {/* <MainTemplate /> */}
+        {/* <Progress /> */}
         {/* <BottomHeader /> */}
+        {/* <IntroNavigator /> */}
+        <Test />
       </NavigationContainer>
     </Provider>
   );

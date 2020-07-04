@@ -1,16 +1,16 @@
 import * as React from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native";
-import { Color, FontType } from "../../assets/Constants";
-import ModifiableText from "../Text/ModifiableText";
+import { Color, FontType } from "../assets/Constants";
+import ModifiableText from "../components/Text/ModifiableText";
 import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 
-const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
-);
+// const FirstRoute = () => (
+//   <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
+// );
 
-const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
-);
+// const SecondRoute = () => (
+//   <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
+// );
 
 const initialLayout = { width: Dimensions.get("window").width };
 
@@ -31,18 +31,21 @@ const renderTabBar = (props) => (
   />
 );
 
-export default function TabViewExample() {
+export default function TabViewExample(props) {
   const [index, setIndex] = React.useState(0);
 
-  const [routes] = React.useState([
-    { key: "first", title: "First" },
-    { key: "second", title: "Second" },
-  ]);
+  //   const [routes] = React.useState([
+  //     { key: "first", title: "First" },
+  //     { key: "second", title: "Second" },
+  //   ]);
 
-  const renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
-  });
+  //   const renderScene = SceneMap({
+  //     first: FirstRoute,
+  //     second: SecondRoute,
+  //   });
+
+  const [routes] = React.useState(props.routes);
+  const renderScene = SceneMap(props.renderScene);
 
   return (
     <TabView

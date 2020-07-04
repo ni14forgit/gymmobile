@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import IconTemplate from "../../assets/IconTemplate";
-import { MenuSVG } from "../../assets/Icons/MiscSVG";
+import { BackSVG } from "../../assets/Icons/MiscSVG";
 import { Color, Dimension } from "../../assets/Constants";
 
 const BackButton = (props) => {
@@ -9,7 +9,7 @@ const BackButton = (props) => {
     <TouchableOpacity onPress={props.onPress}>
       <IconTemplate
         color={Color.blue}
-        activityicon={MenuSVG}
+        activityicon={BackSVG}
         width={Dimension.navigation.menuButton.width}
         height={Dimension.navigation.menuButton.height}
       />

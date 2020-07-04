@@ -57,7 +57,7 @@ const Spirit = (props) => {
       <View style={styles.bottom}>
         <View style={styles.rowContainer}>
           {props.back ? <TextButton text={Statements.button.back} /> : null}
-          <FilledButton text="Continue" />
+          <FilledButton text="Continue" onPress={props.forward} />
         </View>
       </View>
     </SafeAreaView>

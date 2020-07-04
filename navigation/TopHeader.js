@@ -1,15 +1,18 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Color, FontType } from "../../assets/Constants";
-import MenuButton from "../Button/MenuButton";
-import ModifiableText from "../Text/ModifiableText";
+import { Color, FontType } from "../assets/Constants";
+import MenuButton from "../components/Button/MenuButton";
+import BackButton from "../components/Button/BackButton";
+import ModifiableText from "../components/Text/ModifiableText";
 
 const TopHeader = (props) => {
   return (
     <View style={styles.container}>
-      <View style={styles.right}>
-        <MenuButton />
-      </View>
+      {props.backButtonExists ? (
+        <View style={styles.left}>
+          <BackButton />
+        </View>
+      ) : null}
       <View style={styles.right}>
         <MenuButton />
       </View>
@@ -44,7 +47,10 @@ const styles = StyleSheet.create({
   right: {
     position: "absolute",
     right: 15,
-    // bottom: 19,
+  },
+  left: {
+    position: "absolute",
+    left: 15,
   },
   center: {
     alignSelf: "center",

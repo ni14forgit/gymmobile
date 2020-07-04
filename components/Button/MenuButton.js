@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import IconTemplate from "../../assets/IconTemplate";
 import { MenuSVG } from "../../assets/Icons/MiscSVG";
 import { Color, Dimension } from "../../assets/Constants";
