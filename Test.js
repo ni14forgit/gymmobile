@@ -1,15 +1,10 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import MoreOptionButton from "./components/Button/MainAccordionButton";
-import SubOptionItem from "./components/Misc/SubOptionItem";
+import AccordionList from "./screens/models/Progress/AccordionList";
+import Progress from "./screens/Progress/Progress";
 
 const Test = () => {
-  return (
-    <View style={styles.container}>
-      {/* <MoreOptionButton stretched={false} /> */}
-      <SubOptionItem />
-    </View>
-  );
+  return <Progress />;
 };
 
 const styles = StyleSheet.create({

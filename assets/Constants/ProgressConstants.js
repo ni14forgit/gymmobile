@@ -29,7 +29,20 @@ const WeightExercises = {
 };
 
 const Dimensions = {
-  suboptionitemheight: 56,
+  suboptionitemheight: 60,
 };
 
-export { Titles, WeightExercises, Dimensions };
+const Screens = {
+  track: {
+    ACTIVITIES: "activities",
+    SUBACTIVITIES: "subactivities",
+    TRACK: "track",
+  },
+  see: {
+    ACTIVITIES: "activities",
+    SUBACTIVITIES: "subactivities",
+    SEE: "see",
+  },
+};
+
+export { Titles, WeightExercises, Dimensions, Screens };

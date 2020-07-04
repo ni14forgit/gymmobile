@@ -12,7 +12,7 @@ const MainTemplate = (props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TopHeader backButtonExists={backButtonExists} title="Progress" />
+      <TopHeader backButtonExists={backButtonExists} title={props.title} />
       {/* <BottomHeader routesData={} renderSceneData /> */}
       <BottomHeader routes={routes} renderScene={renderScene} />
       <View></View>

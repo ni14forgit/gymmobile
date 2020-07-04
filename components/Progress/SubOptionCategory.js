@@ -7,7 +7,7 @@ import { LegsSVG } from "../../assets/Icons/MiscSVG";
 import { Dimensions } from "../../assets/Constants/ProgressConstants";
 import { Color, FontType } from "../../assets/Constants";
 
-const SubOptionItem = () => {
+const SubOptionCategory = ({ stretched, onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.miniContainer}>
@@ -30,7 +30,7 @@ const SubOptionItem = () => {
           />
         </View>
       </View>
-      <MainAccordionButton />
+      <MainAccordionButton onPress={onPress} stretched={stretched} />
     </View>
   );
 };
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SubOptionItem;
+export default SubOptionCategory;

@@ -1,15 +1,15 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import IconTemplate from "../../assets/IconTemplate";
-import { MenuSVG } from "../../assets/Icons/MiscSVG";
+import { SubRightMoreSVG } from "../../assets/Icons/MiscSVG";
 import { Color, Dimension } from "../../assets/Constants";
 
-const MenuButton = (props) => {
+const SubMoreButton = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <IconTemplate
         color={Color.blue}
-        activityicon={MenuSVG}
+        activityicon={SubRightMoreSVG}
         width={Dimension.navigation.menuButton.width}
         height={Dimension.navigation.menuButton.height}
       />
@@ -17,4 +17,4 @@ const MenuButton = (props) => {
   );
 };
 
-export default MenuButton;
+export default SubMoreButton;

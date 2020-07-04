@@ -1,9 +1,22 @@
 import React from "react";
-import { View } from "react-native";
 import StackModel from "../../../navigation/StackModel";
+import { Screens } from "../../../assets/Constants/ProgressConstants";
+import TrackActivities from "./TrackActivities";
+import TrackSubOptions from "./TrackSubOptions";
+
+const SCREENS = [
+  { name: Screens.track.ACTIVITIES, screen: TrackActivities },
+  { name: Screens.track.SUBACTIVITIES, screen: TrackSubOptions },
+  //   { name: Screens.see.SEE, screen: SeeActivities },
+];
 
 const TrackNavigator = () => {
-  return <StackModel />;
+  return (
+    <StackModel
+      SCREENS={SCREENS}
+      InitialScreenName={Screens.track.ACTIVITIES}
+    />
+  );
 };
 
 export default TrackNavigator;

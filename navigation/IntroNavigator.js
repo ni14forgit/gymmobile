@@ -1,4 +1,4 @@
-import { createStackNavigator } from "@react-navigation/stack";
+// import { createStackNavigator } from "@react-navigation/stack";
 import Intro from "../screens/Intro/Intro";
 import KnowYou from "../screens/Intro/KnowYou";
 import Growth from "../screens/Intro/Spirit/Growth";

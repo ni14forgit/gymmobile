@@ -1,9 +1,22 @@
 import React, { useState, useCallback } from "react";
-import { View, SafeAreaView, StyleSheet } from "react-native";
+import { View, SafeAreaView, StyleSheet, FlatList } from "react-native";
 import { Icon } from "../../../assets/Constants";
+import ActivityCard from "../../../components/Input/ActivityCard";
 
 //DATA should be replaced with data PASSED in as a prop for specific needs
 DATA = Icon.activity;
+
+function Item({ id, title, activityicon, selected, onSelect }) {
+  return (
+    <ActivityCard
+      onPress={() => onSelect(id)}
+      activityicon={activityicon}
+      title={title}
+      selected={selected}
+      style={styles.size}
+    />
+  );
+}
 
 const ScrollActivities = (props) => {
   const [selected, setSelected] = useState(new Map());
