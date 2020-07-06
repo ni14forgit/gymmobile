@@ -5,12 +5,12 @@ import { Dimensions } from "../../assets/Constants/ProgressConstants";
 import { Color, FontType } from "../../assets/Constants";
 import SubMoreButton from "../Button/SubMoreButton";
 
-const SubOptionItem = ({ onPress }) => {
+const SubOptionItem = ({ onPress, title }) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <ModifiableText
-          text="Legs"
+          text={title}
           family={FontType.medium}
           size={FontType.small}
         />

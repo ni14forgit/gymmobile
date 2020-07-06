@@ -7,7 +7,6 @@ import TrackSubOptions from "./TrackSubOptions";
 const SCREENS = [
   { name: Screens.track.ACTIVITIES, screen: TrackActivities },
   { name: Screens.track.SUBACTIVITIES, screen: TrackSubOptions },
-  //   { name: Screens.see.SEE, screen: SeeActivities },
 ];
 
 const TrackNavigator = () => {

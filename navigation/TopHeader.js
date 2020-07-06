@@ -14,7 +14,7 @@ const TopHeader = (props) => {
         </View>
       ) : null}
       <View style={styles.right}>
-        <MenuButton />
+        <MenuButton onPress={props.onPressDrawer} />
       </View>
       <View style={styles.center}>
         <ModifiableText

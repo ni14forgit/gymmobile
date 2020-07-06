@@ -30,6 +30,7 @@ const FontType = {
   question: 24,
   namepassword: 24,
   description: 24,
+  tabnavigator: 20,
 };
 
 const TouchOpacity = 0.6;

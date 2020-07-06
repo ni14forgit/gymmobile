@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 import MainTemplate from "../models/MainTemplate";
 import SeeNavigator from "./See/SeeNavigator";
 import TrackNavigator from "./Track/TrackNavigator";
+import ManageNavigator from "./Manage/ManageNavigator";
 
 // const FirstRoute = () => (
 //   <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
@@ -18,19 +19,19 @@ import TrackNavigator from "./Track/TrackNavigator";
 //   },
 // });
 
-const routes = [
-  { key: "track", title: "Track" },
-  { key: "view", title: "View" },
+const DATA = [
+  { title: "Track", screen: TrackNavigator },
+  { title: "View", screen: SeeNavigator },
+  { title: "Manage", screen: ManageNavigator },
 ];
 
-const renderScene = {
-  track: TrackNavigator,
-  view: SeeNavigator,
-};
-
-const Progress = () => {
+const Progress = ({ navigation }) => {
   return (
-    <MainTemplate title="Progress" routes={routes} renderScene={renderScene} />
+    <MainTemplate
+      DATA={DATA}
+      onPressDrawer={navigation.toggleDrawer}
+      title="Progress"
+    />
   );
 };
 

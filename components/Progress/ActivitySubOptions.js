@@ -17,8 +17,14 @@ const DATA = [
 
 const { not, interpolate } = Animated;
 
-const ActivitySubOptions = () => {
-  const [open, setOpen] = useState(false);
+const ActivitySubOptions = ({
+  title,
+  subtitle,
+  svgicon,
+  initialstate,
+  subitems,
+}) => {
+  const [open, setOpen] = useState(initialstate);
   const transition = useTransition(
     open,
     not(bin(open)),
@@ -26,7 +32,11 @@ const ActivitySubOptions = () => {
     400,
     Easing.inOut(Easing.ease)
   );
-  const height = mix(transition, 0, 3 * Dimensions.suboptionitemheight);
+  const height = mix(
+    transition,
+    0,
+    subitems.length * Dimensions.suboptionitemheight
+  );
 
   // const bottomRadius = interpolate(transition, {
   //   inputRange: [0, 16 / 400],
@@ -40,13 +50,19 @@ const ActivitySubOptions = () => {
     <>
       <TouchableWithoutFeedback>
         <Animated.View>
-          <SubOptionCategory onPress={openOptions} stretched={open} />
+          <SubOptionCategory
+            subtitle={subtitle}
+            title={title}
+            svgicon={svgicon}
+            onPress={openOptions}
+            stretched={open}
+          />
         </Animated.View>
       </TouchableWithoutFeedback>
       <Animated.View style={[styles.items, { height }]}>
-        <SubOptionItem />
-        <SubOptionItem />
-        <SubOptionItem />
+        {subitems.map((val) => {
+          return <SubOptionItem title={val} />;
+        })}
       </Animated.View>
     </>
   );

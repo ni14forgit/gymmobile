@@ -1,13 +1,50 @@
+import { LegsSVG } from "../Icons/MiscSVG";
 const Titles = {
   track: {
-    activities: "Track Your Growth",
-    options: "Expand an area to see exercises",
+    activities: "Input Growth Metrics",
+    // options: "Expand an area to see exercises",
+    options: "Expand Selections",
   },
   see: {
-    activities: "See Your Growth",
-    options: "Expand an area to see exercises",
+    activities: "Visualize Growth",
+    options: "Expand Selections",
+  },
+  manage: {
+    main: "Manage Activities",
+    suggested: "Suggested",
   },
 };
+
+const Margin = {
+  title: {
+    left: "8%",
+    vertical: "6%",
+  },
+};
+
+const ExampleTrackSee = [
+  {
+    title: "Legs",
+    subtitle: "Squats, Leg Press +1 more",
+    svgicon: LegsSVG,
+    initialstate: false,
+    subitems: ["Squats", "Leg Press", "Calf Raise"],
+  },
+  {
+    title: "Core",
+    subtitle: "Planks, Situps",
+    svgicon: LegsSVG,
+    initialstate: false,
+    subitems: ["Planks", "Situps"],
+  },
+  {
+    title: "Arms",
+    subtitle: "Push Ups, Dips +3 more",
+    svgicon: LegsSVG,
+    initialstate: false,
+    subitems: ["Push Ups", "Dips", "Close Grip Bench"],
+  },
+];
 
 const WeightExercises = {
   Legs: {
@@ -30,6 +67,12 @@ const WeightExercises = {
 
 const Dimensions = {
   suboptionitemheight: 60,
+  modal: {
+    xButton: {
+      height: 20,
+      width: 20,
+    },
+  },
 };
 
 const Screens = {
@@ -45,4 +88,11 @@ const Screens = {
   },
 };
 
-export { Titles, WeightExercises, Dimensions, Screens };
+export {
+  Titles,
+  WeightExercises,
+  Dimensions,
+  Screens,
+  Margin,
+  ExampleTrackSee,
+};

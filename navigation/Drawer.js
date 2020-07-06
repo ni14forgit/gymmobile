@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button, View, StyleSheet, Text } from "react-native";
+import _ from "lodash";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -8,26 +9,82 @@ import {
 } from "@react-navigation/drawer";
 import MenuBar from "../components/Button/MenuButton";
 import { Dimension, Color, FontType } from "../assets/Constants";
+import Progress from "../screens/Progress/Progress";
 
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-      <MenuBar onPress={navigation.toggleDrawer} />
-    </View>
-  );
-}
+// function NotificationsScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Button onPress={() => navigation.goBack()} title="Go back home" />
+//       <MenuBar onPress={navigation.toggleDrawer} />
+//     </View>
+//   );
+// }
+
+// function HiScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Button onPress={() => navigation.goBack()} title="Go back home" />
+//       <MenuBar onPress={navigation.toggleDrawer} />
+//     </View>
+//   );
+// }
+
+console.log("hi");
+console.log("this is cool");
 
 const Divider = () => {
   return <View style={styles.divider}></View>;
 };
 
 function CustomDrawerContent(props) {
+  // const prop2 = JSON.parse(JSON.stringify(props));
+  // prop2.state.routes = prop2.state.routes.slice(0, 2);
+
+  // const routes2 = props.state.routes.slice(0, 2);
+  // const props2 = props;
+  // props2.state.routes = routes2;
+
+  // const prop3 = Object.assign({}, props);
+  // prop3.state.routes = prop3.state.routes.slice(3, 5);
+
+  // console.log("hi");
+  // console.log("this is cool");
+  // console.log(Object.keys(props));
+  // console.log(props.navigation);
+
+  // console.log("state");
+  // console.log(props.state);
+
+  // const routes = props.state.routes;
+
+  // const routes1 = routes.slice(0, 1);
+  // const routes2 = routes.slice(1, 2);
+
+  // console.log(routes1);
+  // console.log(routes2);
+
+  // const prop1 = _.cloneDeep(props);
+  // prop1.state.routes = routes1;
+
   return (
     <DrawerContentScrollView {...props}>
+      <DrawerItem
+        label="Title of App"
+        style={{
+          position: "relative",
+          alignSelf: "center",
+          flex: 1,
+          marginBottom: 40,
+          marginLeft: 50,
+          width: "100%",
+        }}
+        labelStyle={{
+          fontFamily: FontType.bold,
+          fontSize: 17,
+          color: Color.white,
+        }}
+      />
       <DrawerItemList {...props} />
-
-      <Divider />
     </DrawerContentScrollView>
   );
 }
@@ -43,6 +100,7 @@ function MainNavigation() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       hideStatusBar="true"
       overlayColor="transparent"
+      sceneContainerStyle={{ backgroundColor: Color.white }}
       drawerContentOptions={{
         activeTintColor: Color.white,
         inactiveTintColor: Color.white,
@@ -52,38 +110,46 @@ function MainNavigation() {
           alignItems: "center",
         },
         itemStyle: {
-          height: 45,
-
-          width: 175,
-          alignContent: "center",
+          // height: 45,
+          width: "100%",
+          alignContent: "left",
+          alignSelf: "left",
           justifyContent: "center",
           flexDirection: "column",
-          flex: 1,
-          marginVertical: -2,
+          marginVertical: 10,
+          // borderColor: "red",
+          // borderWidth: 2,
+          // flex: 1,
+
+          paddingHorizontal: 0,
+          // marginVertical: -2,
         },
         labelStyle: {
           fontFamily: FontType.medium,
-          fontSize: 15,
+          fontSize: 17,
+          // flex: 1,
+          // borderColor: "red",
+          // borderWidth: 2,
         },
       }}
       drawerStyle={{
         backgroundColor: Color.blue,
         flexDirection: "column",
         justifyContent: "center",
-        paddingLeft: -20,
-        width: 175,
+        // paddingLeft: -20,
+        width: 160,
       }}
       screenOptions={{ swipeEnabled: false }}
     >
-      <Drawer.Screen name="Progress" component={NotificationsScreen} />
-      <Drawer.Screen name="Buddies" component={NotificationsScreen} />
+      <Drawer.Screen name="Progress" component={Progress} />
+      {/* <Drawer.Screen name="Buddies" component={HiScreen} />
 
       <Drawer.Screen name="Trainers" component={NotificationsScreen} />
-      <Drawer.Screen name="Daily Check In" component={NotificationsScreen} />
+      <Drawer.Screen name="Check In" component={NotificationsScreen} />
       <Drawer.Screen name="Rewards" component={NotificationsScreen} />
 
       <Drawer.Screen name="Settings" component={NotificationsScreen} />
-      <Drawer.Screen name="Log Out" component={NotificationsScreen} />
+      <Drawer.Screen name="Log Out" component={NotificationsScreen} /> */}
     </Drawer.Navigator>
   );
 }

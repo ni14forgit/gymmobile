@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import ModifiableText from "../Text/ModifiableText";
 import IconTemplate from "../../assets/IconTemplate";
 import MainAccordionButton from "../Button/MainAccordionButton";
@@ -7,31 +7,39 @@ import { LegsSVG } from "../../assets/Icons/MiscSVG";
 import { Dimensions } from "../../assets/Constants/ProgressConstants";
 import { Color, FontType } from "../../assets/Constants";
 
-const SubOptionCategory = ({ stretched, onPress }) => {
+const SubOptionCategory = ({
+  stretched,
+  onPress,
+  title,
+  subtitle,
+  svgicon,
+}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.miniContainer}>
-        <IconTemplate
-          color={Color.blue}
-          activityicon={LegsSVG}
-          width={40}
-          height={40}
-        />
-        <View style={styles.textWrapper}>
-          <ModifiableText
-            text="Legs"
-            family={FontType.bold}
-            size={FontType.small}
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.miniContainer}>
+          <IconTemplate
+            color={Color.blue}
+            activityicon={svgicon}
+            width={40}
+            height={40}
           />
-          <ModifiableText
-            text="Squats, Leg Press +3 more"
-            family={FontType.regular}
-            size={13}
-          />
+          <View style={styles.textWrapper}>
+            <ModifiableText
+              text={title}
+              family={FontType.bold}
+              size={FontType.small}
+            />
+            <ModifiableText
+              text={subtitle}
+              family={FontType.regular}
+              size={13}
+            />
+          </View>
         </View>
+        <MainAccordionButton onPress={onPress} stretched={stretched} />
       </View>
-      <MainAccordionButton onPress={onPress} stretched={stretched} />
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 

@@ -1,65 +1,35 @@
-import * as React from "react";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import React from "react";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import SeeNavigator from "../screens/Progress/See/SeeNavigator";
+import TrackNavigator from "../screens/Progress/Track/TrackNavigator";
 import { Color, FontType } from "../assets/Constants";
-import ModifiableText from "../components/Text/ModifiableText";
-import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 
-// const FirstRoute = () => (
-//   <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
-// );
+const Tab = createMaterialTopTabNavigator();
 
-// const SecondRoute = () => (
-//   <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
-// );
-
-const initialLayout = { width: Dimensions.get("window").width };
-
-const renderTabBar = (props) => (
-  <TabBar
-    {...props}
-    indicatorStyle={{ backgroundColor: Color.blue, height: 5 }}
-    inactiveColor={Color.grey}
-    activeColor={Color.blue}
-    style={{ backgroundColor: "transparent" }}
-    renderLabel={({ route, focused, color }) => (
-      <Text
-        style={{ color, marginTop: 8, fontFamily: FontType.bold, fontSize: 20 }}
-      >
-        {route.title}
-      </Text>
-    )}
-  />
-);
-
-export default function TabViewExample(props) {
-  const [index, setIndex] = React.useState(0);
-
-  //   const [routes] = React.useState([
-  //     { key: "first", title: "First" },
-  //     { key: "second", title: "Second" },
-  //   ]);
-
-  //   const renderScene = SceneMap({
-  //     first: FirstRoute,
-  //     second: SecondRoute,
-  //   });
-
-  const [routes] = React.useState(props.routes);
-  const renderScene = SceneMap(props.renderScene);
-
+function MyTabs({ DATA }) {
   return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={renderScene}
-      onIndexChange={setIndex}
-      initialLayout={initialLayout}
-      renderTabBar={renderTabBar}
-    />
+    <Tab.Navigator
+      tabBarOptions={{
+        labelStyle: {
+          fontFamily: FontType.bold,
+          fontSize: FontType.tabnavigator,
+          textTransform: "none",
+        },
+        inactiveTintColor: Color.grey,
+        activeTintColor: Color.blue,
+        indicatorStyle: {
+          backgroundColor: Color.blue,
+          height: 5,
+        },
+      }}
+    >
+      {/* <Tab.Screen name="Track" component={TrackNavigator} />
+      <Tab.Screen name="View" component={SeeNavigator} /> */}
+      {DATA.map((val) => {
+        return <Tab.Screen name={val.title} component={val.screen} />;
+      })}
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  scene: {
-    flex: 1,
-  },
-});
+export default MyTabs;

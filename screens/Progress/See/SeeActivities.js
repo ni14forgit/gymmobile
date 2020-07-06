@@ -5,15 +5,14 @@ import { FontType } from "../../../assets/Constants";
 import { Titles } from "../../../assets/Constants/ProgressConstants";
 import ScrollActivities from "../../models/Progress/ScrollActivities";
 
-const SeeActivities = () => {
+const SeeActivities = (props) => {
+  const forward = () => {
+    props.navigation.navigate("subactivities");
+  };
+
   return (
     <View style={styles.container}>
-      <ModifiableText
-        text={Titles.see.activities}
-        family={FontType.medium}
-        size={FontType.description}
-      />
-      <ScrollActivities />
+      <ScrollActivities onPress={forward} title={Titles.see.activities} />
     </View>
   );
 };

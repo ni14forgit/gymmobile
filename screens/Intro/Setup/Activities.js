@@ -54,7 +54,6 @@ const Activities = (props) => {
         />
         <FlatList
           data={DATA}
-          // style={styles.flatlist}
           showsVerticalScrollIndicator={false}
           numColumns={2}
           renderItem={({ item }) => (
@@ -88,9 +87,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     alignItems: "center",
-
-    // borderColor: "red",
-    // borderWidth: 3,
   },
 
   titlequestion: {
@@ -102,8 +98,6 @@ const styles = StyleSheet.create({
   },
   flatlist: {
     flex: 1,
-    // borderColor: "blue",
-    // borderWidth: 3,
   },
   qnavigator: {
     height: "15%",
