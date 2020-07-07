@@ -15,6 +15,8 @@ const Color = {
   grey: "rgba(51, 78, 139, 0.25);",
   black: "black",
   background: "#FFFFFF",
+
+  badgrey: "#8490ab",
 };
 
 const FontType = {
@@ -24,6 +26,7 @@ const FontType = {
   button: 18,
   activityCard: 18,
   small: 20,
+  reallysmall: 18,
   // inputPressNumber: 18,
   spirit: 32,
   title: 40,

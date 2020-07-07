@@ -13,15 +13,15 @@ import ModifiableText from "../../../components/Text/ModifiableText";
 import FilledButton from "../../../components/Button/FilledButton";
 import OutlinedButton from "../../../components/Button/OutlinedButton";
 import IconTemplate from "../../../assets/IconTemplate";
+import { SoccerSVG } from "../../../assets/Icons/ActivitySVG";
 
-const ModalScreen = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+const ModalScreen = (props) => {
   return (
     <View style={styles.centeredView}>
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={props.visible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
         }}
@@ -29,31 +29,35 @@ const ModalScreen = () => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <View style={styles.xbutton}>
-              <Xbutton
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                }}
-              />
+              <Xbutton onPress={props.toggle} />
             </View>
             <View style={styles.main}>
               <ModifiableText
                 family={FontType.medium}
                 size={FontType.question}
-                text="Hi there"
+                text={props.title}
+                style={styles.centerText}
               />
+              <ModifiableText
+                family={FontType.medium}
+                size={FontType.reallysmall}
+                text={props.subtitle}
+                style={styles.centerText}
+              />
+              <IconTemplate
+                color={Color.badgrey}
+                activityicon={props.icon}
+                height="50%"
+                width="50%"
+              />
+              <View style={styles.buttoncontainer}>
+                <OutlinedButton text="Delete" onPress={props.toggle} />
+                <FilledButton text="Cancel" onPress={props.toggle} />
+              </View>
             </View>
           </View>
         </View>
       </Modal>
-
-      <TouchableHighlight
-        style={styles.openButton}
-        onPress={() => {
-          setModalVisible(true);
-        }}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </TouchableHighlight>
     </View>
   );
 };
@@ -62,11 +66,11 @@ const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: "flex-end",
-    borderColor: "green",
-    borderWidth: 2,
+    // borderColor: "green",
+    // borderWidth: 2,
   },
   modalView: {
-    height: "80%",
+    height: "70%",
     width: "100%",
     backgroundColor: Color.white,
     borderRadius: 10,
@@ -78,22 +82,32 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    borderColor: "blue",
-    borderWidth: 1,
+    // borderColor: "blue",
+    // borderWidth: 1,
     justifyContent: "center",
   },
+  centerText: {
+    textAlign: "center",
+  },
   main: {
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     height: "80%",
     width: "100%",
-    borderColor: "purple",
-    borderWidth: 2,
+    // borderColor: "purple",
+    // borderWidth: 2,
     alignItems: "center",
   },
   xbutton: {
     position: "absolute",
     top: 20,
     right: 20,
+  },
+  buttoncontainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    // borderColor: "red",
+    // borderWidth: 2,
+    width: "80%",
   },
   openButton: {
     backgroundColor: "#F194FF",
