@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
   },
   centerText: {
     textAlign: "center",
+    width: "90%",
   },
   main: {
     justifyContent: "space-evenly",

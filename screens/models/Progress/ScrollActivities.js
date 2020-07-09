@@ -26,17 +26,6 @@ function Item({ onPress, id, title, activityicon, selected, onSelect }) {
 const ScrollActivities = (props) => {
   const [selected, setSelected] = useState(new Map());
 
-  // const Header = () => {
-  //   return (
-  //     <ModifiableText
-  //       text={props.title}
-  //       family={FontType.medium}
-  //       size={FontType.description}
-  //       style={styles.title}
-  //     />
-  //   );
-  // };
-
   const onPress = () => {
     props.onPress();
   };

@@ -7,6 +7,7 @@ import Drawer from "./navigation/Drawer";
 import MatchActivityInputs from "./components/Buddies/MatchActivityInputs";
 import MatchActivityList from "./components/Buddies/MatchActivityList";
 import { ExampleMatchActivityData } from "./assets/Constants/BuddyConstants";
+import ProfileCard from "./components/Buddies/ProfileCard";
 // import Modal from "./screens/Progress/Manage/Modal";
 
 const Test = () => {
@@ -14,8 +15,9 @@ const Test = () => {
 
   return (
     <View style={styles.container}>
-      {/* <MatchActivityInputs selected={true} text="Hi there" /> */}
-      <MatchActivityList Activities={ExampleMatchActivityData} />
+      {/* <Drawer /> */}
+      <ProfileCard />
+      {/* <MatchActivityList Activities={ExampleMatchActivityData} /> */}
     </View>
   );
 };
