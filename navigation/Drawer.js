@@ -10,24 +10,7 @@ import {
 import MenuBar from "../components/Button/MenuButton";
 import { Dimension, Color, FontType } from "../assets/Constants";
 import Progress from "../screens/Progress/Progress";
-
-// function NotificationsScreen({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Button onPress={() => navigation.goBack()} title="Go back home" />
-//       <MenuBar onPress={navigation.toggleDrawer} />
-//     </View>
-//   );
-// }
-
-// function HiScreen({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Button onPress={() => navigation.goBack()} title="Go back home" />
-//       <MenuBar onPress={navigation.toggleDrawer} />
-//     </View>
-//   );
-// }
+import Buddies from "../screens/Buddies/Buddies";
 
 console.log("hi");
 console.log("this is cool");
@@ -37,35 +20,6 @@ const Divider = () => {
 };
 
 function CustomDrawerContent(props) {
-  // const prop2 = JSON.parse(JSON.stringify(props));
-  // prop2.state.routes = prop2.state.routes.slice(0, 2);
-
-  // const routes2 = props.state.routes.slice(0, 2);
-  // const props2 = props;
-  // props2.state.routes = routes2;
-
-  // const prop3 = Object.assign({}, props);
-  // prop3.state.routes = prop3.state.routes.slice(3, 5);
-
-  // console.log("hi");
-  // console.log("this is cool");
-  // console.log(Object.keys(props));
-  // console.log(props.navigation);
-
-  // console.log("state");
-  // console.log(props.state);
-
-  // const routes = props.state.routes;
-
-  // const routes1 = routes.slice(0, 1);
-  // const routes2 = routes.slice(1, 2);
-
-  // console.log(routes1);
-  // console.log(routes2);
-
-  // const prop1 = _.cloneDeep(props);
-  // prop1.state.routes = routes1;
-
   return (
     <DrawerContentScrollView {...props}>
       <DrawerItem
@@ -142,9 +96,9 @@ function MainNavigation() {
       screenOptions={{ swipeEnabled: false }}
     >
       <Drawer.Screen name="Progress" component={Progress} />
-      {/* <Drawer.Screen name="Buddies" component={HiScreen} />
+      <Drawer.Screen name="Buddies" component={Buddies} />
 
-      <Drawer.Screen name="Trainers" component={NotificationsScreen} />
+      {/* <Drawer.Screen name="Trainers" component={NotificationsScreen} />
       <Drawer.Screen name="Check In" component={NotificationsScreen} />
       <Drawer.Screen name="Rewards" component={NotificationsScreen} />
 

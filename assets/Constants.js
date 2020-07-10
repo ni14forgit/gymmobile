@@ -27,7 +27,7 @@ const FontType = {
   activityCard: 18,
   small: 20,
   reallysmall: 18,
-  buddysmall: 15,
+
   // inputPressNumber: 18,
   spirit: 32,
   title: 40,

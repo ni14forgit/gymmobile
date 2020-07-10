@@ -1,34 +1,31 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import AccordionList from "./screens/models/Progress/AccordionList";
-import Progress from "./screens/Progress/Progress";
-import Activities from "./screens/Intro/Setup/Activities";
-import Drawer from "./navigation/Drawer";
-import MatchActivityInputs from "./components/Buddies/MatchActivityInputs";
-import MatchActivityList from "./components/Buddies/MatchActivityList";
-import { ExampleMatchActivityData } from "./assets/Constants/BuddyConstants";
-import ProfileCard from "./components/Buddies/ProfileCard";
+// import ProfileCard from "./components/Buddies/ProfileCard";
 // import Modal from "./screens/Progress/Manage/Modal";
+import BuddyFinder from "./screens/Buddies/Finder/BuddyFinder";
+import MatchCard from "./components/Buddies/MatchCard";
+import Drawer from "./navigation/Drawer";
 
 const Test = () => {
   // return <Drawer />;
 
   return (
     <View style={styles.container}>
-      {/* <Drawer /> */}
-      <ProfileCard />
+      <Drawer />
+      {/* <MatchCard /> */}
+      {/* <ProfileCard /> */}
       {/* <MatchActivityList Activities={ExampleMatchActivityData} /> */}
+      {/* <BuddyFinder /> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 200,
+    // marginTop: 200,
     flex: 1,
     // alignItems: "center",
     // justifyContent: "center",
-    flexDirection: "column",
   },
 });
 

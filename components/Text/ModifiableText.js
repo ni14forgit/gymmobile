@@ -11,7 +11,11 @@ const ModifiableText = (props) => {
     },
   });
 
-  return <Text style={[styles.text, props.style]}>{props.text}</Text>;
+  return (
+    <Text numberOfLines={props.numlines} style={[styles.text, props.style]}>
+      {props.text}
+    </Text>
+  );
 };
 
 export default ModifiableText;

@@ -5,31 +5,43 @@ import UserPhoto from "../../assets/Image/appleselfie.jpg";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Color, FontType, TouchOpacity } from "../../assets/Constants";
 import { TextSizes } from "../../assets/Constants/BuddyConstants";
-import SmallFillButton from "../Buddies/SmallFillButton";
-import SmallOutlineButton from "../Buddies/SmallOutlineButton";
 
-const ProfileCard = ({ matchedon, name, similarities, style, onPress }) => {
+const MatchCard = ({
+  matchedon,
+  name,
+  similarities,
+  style,
+  phone,
+  email,
+  onPress,
+}) => {
   return (
     <TouchableOpacity
-      style={[styles.container, style]}
       activeOpacity={TouchOpacity}
-      onPress={onPress}
+      style={[styles.container, style]}
+      onPress={() => onPress(name, email, phone, similarities, matchedon)}
     >
       <UserPic userprofile={UserPhoto} />
       <View style={styles.description}>
         <View style={styles.toprow}>
-          <View style={styles.nametitle}>
-            <ModifiableText
-              size={TextSizes.profilename}
-              family={FontType.bold}
-              text={name}
-              numlines={1}
-            />
-          </View>
-          <View style={styles.buttons}>
-            <SmallOutlineButton text="No" />
-            <SmallFillButton text="Yes" />
-          </View>
+          <ModifiableText
+            size={TextSizes.profilename}
+            family={FontType.bold}
+            text={name}
+            numlines={1}
+          />
+          <ModifiableText
+            size={TextSizes.profilecontactinfo}
+            family={FontType.regular}
+            text={email}
+            numlines={1}
+          />
+          <ModifiableText
+            size={TextSizes.profilecontactinfo}
+            family={FontType.regular}
+            text={phone}
+            numlines={1}
+          />
         </View>
         <View style={styles.bottomrow}>
           <ModifiableText
@@ -42,7 +54,7 @@ const ProfileCard = ({ matchedon, name, similarities, style, onPress }) => {
             size={TextSizes.profiledescription}
             family={FontType.regular}
             text={similarities}
-            numlines={2}
+            numlines={1}
           />
         </View>
       </View>
@@ -68,31 +80,27 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
   },
   description: {
-    height: "90%",
+    height: "80%",
     width: "70%",
-    paddingLeft: "1%",
+    paddingLeft: "3%",
     // borderColor: "blue",
     // borderWidth: 2,
   },
   toprow: {
-    height: "35%",
+    height: "50%",
     // borderColor: "blue",
     // borderWidth: 2,
-    flexDirection: "row",
+    // flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    // alignItems: "center",
   },
   bottomrow: {
-    height: "65%",
-    justifyContent: "space-evenly",
+    height: "50%",
+    justifyContent: "flex-end",
     // borderColor: "blue",
     // borderWidth: 2,
   },
-  nametitle: {
-    width: "60%",
-    // borderColor: "blue",
-    // borderWidth: 2,
-  },
+
   buttons: {
     flexDirection: "row",
     width: "40%",
@@ -100,6 +108,8 @@ const styles = StyleSheet.create({
     // borderColor: "blue",
     // borderWidth: 2,
   },
+  overflow: {},
+  indbutton: {},
 });
 
-export default ProfileCard;
+export default MatchCard;

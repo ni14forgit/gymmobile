@@ -2,7 +2,6 @@ import React, { useState, useCallback } from "react";
 import MatchActivityInputs from "./MatchActivityInputs";
 import { FlatList, View, StyleSheet, ScrollView } from "react-native";
 import IconTemplate from "../../assets/IconTemplate";
-import SubMoreButton from "../Button/SubMoreButton";
 import {
   LeftScrollAngleSVG,
   RightScrollAngleSVG,

@@ -5,20 +5,6 @@ import SeeNavigator from "./See/SeeNavigator";
 import TrackNavigator from "./Track/TrackNavigator";
 import ManageNavigator from "./Manage/ManageNavigator";
 
-// const FirstRoute = () => (
-//   <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
-// );
-
-// const SecondRoute = () => (
-//   <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
-// );
-
-// const styles = StyleSheet.create({
-//   scene: {
-//     flex: 1,
-//   },
-// });
-
 const DATA = [
   { title: "Track", screen: TrackNavigator },
   { title: "View", screen: SeeNavigator },
