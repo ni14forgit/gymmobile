@@ -25,6 +25,10 @@ const Margin = {
     left: "8%",
     vertical: "6%",
   },
+  matchactivity: {
+    top: "6%",
+    bottom: "3%",
+  },
 };
 
 const Padding = {
@@ -156,7 +160,10 @@ const ExampleMatches = [
 ];
 
 const Titles = {
-  finder: "People you'll work well with!",
+  finder: {
+    main: "People you'll work well with!",
+    list: "Select activities to explore",
+  },
   requests: "Looking for some motivation?",
   buddies: {
     yesmatches: "You matched for a reason!",

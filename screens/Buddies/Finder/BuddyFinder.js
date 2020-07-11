@@ -6,18 +6,19 @@ import {
   ExampleProfiles,
   Titles,
   ExampleMatchActivityData,
+  Margin,
 } from "../../../assets/Constants/BuddyConstants";
 import MatchActivityList from "../../../components/Buddies/MatchActivityList";
 import ModifiableText from "../../../components/Text/ModifiableText";
 import { FontType } from "../../../assets/Constants";
 
-const Header = (title) => {
+const Header = ({ title }) => {
   return (
     <ModifiableText
       text={title}
       family={FontType.medium}
-      size={20}
-      // style={styles.title}
+      size={FontType.description}
+      style={styles.title}
     />
   );
 };
@@ -49,14 +50,15 @@ const BuddyFinder = () => {
         toggle={toggleState}
       />
 
-      {Header("Hi there")}
+      <Header title={Titles.finder.list} />
 
       <MatchActivityList Activities={ExampleMatchActivityData} />
 
       <BuddyList
-        title={Titles.finder}
+        title={Titles.finder.main}
         DATA={ExampleProfiles}
         onPress={viewProfile}
+        style={styles.marginactivitylistfix}
       />
     </View>
   );
@@ -67,13 +69,18 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
-  innerhalf: {
-    height: "50%",
-    width: "100%",
-    // flex: 1,
-  },
   profile: {
     marginBottom: 10,
+  },
+  title: {
+    marginTop: Margin.matchactivity.top,
+    // marginBottom: Margin.matchactivity.bottom,
+    // borderColor: "purple",
+    // borderWidth: 2,
+    marginLeft: Margin.title.left,
+  },
+  marginactivitylistfix: {
+    marginTop: "-1%",
   },
 });
 

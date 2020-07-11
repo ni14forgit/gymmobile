@@ -13,7 +13,7 @@ const MatchActivityInputs = (props) => {
       fontSize: FontType.reallysmall,
     },
     button: {
-      // justifyContent: "center",
+      justifyContent: "center",
       alignItems: "center",
       backgroundColor: props.selected ? Color.blue : Color.white,
       paddingHorizontal: Padding.matchactivitynames.horizontal + marginDiff,

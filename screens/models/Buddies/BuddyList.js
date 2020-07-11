@@ -5,18 +5,18 @@ import { FontType } from "../../../assets/Constants";
 import { Margin } from "../../../assets/Constants/BuddyConstants";
 import { FlatList, StyleSheet } from "react-native";
 
-const Header = (title) => {
-  return (
-    <ModifiableText
-      text={title}
-      family={FontType.medium}
-      size={FontType.description}
-      style={styles.title}
-    />
-  );
-};
+const BuddyList = ({ DATA, onPress, title, style }) => {
+  const Header = (title) => {
+    return (
+      <ModifiableText
+        text={title}
+        family={FontType.medium}
+        size={FontType.description}
+        style={[styles.title, style]}
+      />
+    );
+  };
 
-const BuddyList = ({ DATA, onPress, title }) => {
   return (
     <FlatList
       ListHeaderComponent={Header(title)}
