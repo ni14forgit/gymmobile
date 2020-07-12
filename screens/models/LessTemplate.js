@@ -4,11 +4,12 @@ import TopHeader from "../../navigation/TopHeader";
 import BottomHeader from "../../navigation/BottomHeader";
 import { useSelector } from "react-redux";
 
-const MainTemplate = (props) => {
+const LessTemplate = (props) => {
   const backButtonExists = useSelector((state) => state.navigation.isBack);
   const backButtonFunction = useSelector(
     (state) => state.navigation.backFunction
   );
+  const Screen = props.Screen;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -17,10 +18,8 @@ const MainTemplate = (props) => {
         backButtonFunction={backButtonFunction}
         onPressDrawer={props.onPressDrawer}
         title={props.title}
-        // style={styles.topheader}
       />
-
-      <BottomHeader DATA={props.DATA} />
+      <Screen />
     </SafeAreaView>
   );
 };
@@ -29,4 +28,4 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
 });
 
-export default MainTemplate;
+export default LessTemplate;

@@ -6,6 +6,9 @@ import { FontType } from "../../../assets/Constants";
 import { Titles, Margin } from "../../../assets/Constants/ProgressConstants";
 import { ExampleTrackSee } from "../../../assets/Constants/ProgressConstants";
 import Modal from "./Modal";
+import { useDispatch } from "react-redux";
+import { setBackButton } from "../../../store/actions/navigation";
+import { useFocusEffect } from "@react-navigation/native";
 
 const Header = (title) => {
   return (
@@ -61,6 +64,15 @@ const Options = () => {
   const addActivity = (activity, svgicon) => {
     console.log("add the following activity: " + activity);
   };
+
+  const dispatch = useDispatch();
+  const setBackMenu = () => {
+    console.log("triggered");
+    dispatch(setBackButton(false));
+  };
+  useFocusEffect(() => {
+    setBackMenu();
+  }, []);
 
   return (
     <View style={styles.container}>

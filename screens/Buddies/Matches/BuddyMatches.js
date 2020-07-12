@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-// import ModifiableText from "../../../components/Text/ModifiableText";
-// import ProfileCard from "../../../components/Buddies/ProfileCard";
-// import { FontType } from "../../../assets/Constants";
 import MatchList from "../../models/Buddies/MatchList";
 import MatchModal from "../../models/Buddies/MatchModal";
 import {

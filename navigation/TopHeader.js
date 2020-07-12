@@ -7,10 +7,10 @@ import ModifiableText from "../components/Text/ModifiableText";
 
 const TopHeader = (props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.style]}>
       {props.backButtonExists ? (
         <View style={styles.left}>
-          <BackButton />
+          <BackButton onPress={props.backButtonFunction} />
         </View>
       ) : null}
       <View style={styles.right}>
@@ -35,11 +35,12 @@ const styles = StyleSheet.create({
     // borderColor: "red",
     // borderWidth: 3,
     backgroundColor: "white",
-    shadowColor: Color.black,
-    shadowOffset: { width: 0, height: 3 },
-    shadowRadius: 3,
-    shadowOpacity: 0.1,
-    borderTopWidth: 0,
+    // shadowColor: Color.black,
+    // shadowOffset: { width: 0, height: 0 },
+    // shadowRadius: 5,
+    // shadowOpacity: 0.1,
+    // borderTopWidth: 0,
+    // borderBottomWidth: 2,
 
     height: 55,
     width: "100%",

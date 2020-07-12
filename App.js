@@ -50,11 +50,6 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {/* <Drawer /> */}
-        {/* <MainTemplate /> */}
-        {/* <Progress /> */}
-        {/* <BottomHeader /> */}
-        {/* <IntroNavigator /> */}
         <Test />
       </NavigationContainer>
     </Provider>

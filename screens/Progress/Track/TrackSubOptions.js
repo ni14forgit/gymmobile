@@ -8,8 +8,31 @@ import {
   Margin,
   ExampleTrackSee,
 } from "../../../assets/Constants/ProgressConstants";
+import { useDispatch } from "react-redux";
+import {
+  setBackButton,
+  setBackFunction,
+} from "../../../store/actions/navigation";
+import { useFocusEffect } from "@react-navigation/native";
+import { StackActions } from "@react-navigation/native";
 
-const TrackSubOptions = () => {
+const TrackSubOptions = ({ navigation }) => {
+  const dispatch = useDispatch();
+
+  const setBackMenu = () => {
+    dispatch(setBackButton(true));
+    dispatch(setBackFunction(goBackPage));
+  };
+
+  const goBackPage = () => {
+    // console.log("goBackPage");
+    const popAction = StackActions.pop(1);
+    navigation.dispatch(popAction);
+  };
+
+  useFocusEffect(() => {
+    setBackMenu();
+  }, []);
   return (
     <View style={styles.container}>
       <AccordionList title={Titles.track.options} DATA={ExampleTrackSee} />
