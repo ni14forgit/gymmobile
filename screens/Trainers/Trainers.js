@@ -1,15 +1,12 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import LessTemplate from "../models/LessTemplate";
-import TrainersNavigation from "./TrainersNavigation";
-
-const DATA = [{ title: "h", screen: TrainersNavigation }];
+import TrainersList from "./TrainersList";
 
 const Progress = ({ navigation }) => {
   return (
     <LessTemplate
-      //   DATA={DATA}
-      Screen={TrainersNavigation}
+      Screen={TrainersList}
       onPressDrawer={navigation.toggleDrawer}
       title="Trainers"
     />

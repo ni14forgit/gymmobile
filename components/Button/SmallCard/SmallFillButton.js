@@ -7,7 +7,7 @@ import {
   Dimension,
   BorderRadius,
   TouchOpacity,
-} from "../../assets/Constants";
+} from "../../../assets/Constants";
 
 const SmallFillButton = (props) => {
   const styles = StyleSheet.create({

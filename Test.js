@@ -5,6 +5,7 @@ import { View, StyleSheet } from "react-native";
 import BuddyFinder from "./screens/Buddies/Finder/BuddyFinder";
 import MatchCard from "./components/Buddies/MatchCard";
 import Drawer from "./navigation/Drawer";
+import IntroNavigator from "./navigation/IntroNavigator";
 
 const Test = () => {
   // return <Drawer />;
@@ -16,6 +17,7 @@ const Test = () => {
       {/* <ProfileCard /> */}
       {/* <MatchActivityList Activities={ExampleMatchActivityData} /> */}
       {/* <BuddyFinder /> */}
+      {/* <IntroNavigator /> */}
     </View>
   );
 };

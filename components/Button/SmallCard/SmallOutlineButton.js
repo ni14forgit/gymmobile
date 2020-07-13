@@ -7,7 +7,7 @@ import {
   Dimension,
   BorderRadius,
   TouchOpacity,
-} from "../../assets/Constants";
+} from "../../../assets/Constants";
 
 const OutlinedButton = (props) => {
   const styles = StyleSheet.create({
