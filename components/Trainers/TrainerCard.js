@@ -8,20 +8,12 @@ import { TextSizes } from "../../assets/Constants/BuddyConstants";
 import FilledButton from "../Button/FilledButton";
 import SmallFillButton from "../Button/SmallCard/SmallFillButton";
 
-const TrainerCard = ({
-  matchedon,
-  name,
-  similarities,
-  style,
-  phone,
-  email,
-  onPress,
-}) => {
+const TrainerCard = ({ name, style, email, specialties }) => {
   return (
     <TouchableOpacity
       activeOpacity={TouchOpacity}
       style={[styles.container, style]}
-      onPress={() => onPress(name, email, phone, similarities, matchedon)}
+      // onPress={() => onPress(name, email, specialties)}
     >
       <UserPic userprofile={UserPhoto} />
       <View style={styles.description}>
@@ -29,21 +21,21 @@ const TrainerCard = ({
           <ModifiableText
             size={TextSizes.profilename}
             family={FontType.bold}
-            text={"Joe Smith"}
+            text={name}
             numlines={1}
           />
           <ModifiableText
             size={TextSizes.profilecontactinfo}
             family={FontType.medium}
-            text={"joe@smith.duke.edu"}
+            text={email}
             numlines={1}
           />
         </View>
         <View style={styles.bottomrow}>
           <ModifiableText
-            size={TextSizes.profiledescription}
+            size={TextSizes.profilecontactinfo}
             family={FontType.regular}
-            text={"Cycling, Endurance, Nutrition"}
+            text={specialties}
             numlines={1}
           />
           {/* <FilledButton text="More about Joe" /> */}
@@ -85,7 +77,7 @@ const styles = StyleSheet.create({
     // borderColor: "blue",
     // borderWidth: 2,
     // flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     // alignItems: "center",
   },
   bottomrow: {
