@@ -3,6 +3,7 @@ import { Image, StyleSheet, Dimensions, View } from "react-native";
 import TrainerModal from "../../../assets/Image/trainermodal.jpg";
 import TrainerNew from "../../../assets/Image/trainerimagenew.jpeg";
 import { Color } from "../../../assets/Constants";
+import { Misc } from "../../../assets/Constants/TrainerConstants";
 
 const BioImage = ({}) => {
   return (
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     // backgroundColor: "rgba(0,0,0,0.5)",
     backgroundColor: Color.blue,
-    opacity: 0.26,
+    opacity: Misc.trainermodalopacity,
     borderRadius: 15,
   },
 });

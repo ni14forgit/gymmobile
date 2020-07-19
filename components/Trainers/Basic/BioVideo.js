@@ -4,6 +4,7 @@ import TrainerModal from "../../../assets/Image/trainermodal.jpg";
 import TrainerNew from "../../../assets/Image/trainerimagenew.jpeg";
 import { Color } from "../../../assets/Constants";
 import { Video } from "expo-av";
+import { Misc } from "../../../assets/Constants/TrainerConstants";
 
 const BioVideo = ({ play }) => {
   return (
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     // backgroundColor: "rgba(0,0,0,0.5)",
     backgroundColor: Color.blue,
-    opacity: 0.35,
+    opacity: Misc.trainermodalopacity,
     borderRadius: 15,
   },
 });

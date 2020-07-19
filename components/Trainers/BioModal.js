@@ -8,11 +8,10 @@ import { FontType, Color } from "../../assets/Constants";
 
 // import BioVideo from "./Basic/BioVideo"
 
-const BioModal = ({ data, index, play }) => {
+const BioModal = ({ isImage, source, play }) => {
   return (
     <View style={styles.container}>
-      {/* <BioImage /> */}
-      <BioVideo play={play} />
+      {isImage ? <BioImage /> : <BioVideo play={play} />}
 
       {/* <View style={styles.textContainer}>
         <ModifiableText

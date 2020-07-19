@@ -57,4 +57,8 @@ const FontSize = {
   biomodal: 18,
 };
 
-export { TrainerData, Margin, FontSize };
+const Misc = {
+  trainermodalopacity: 0.33,
+};
+
+export { TrainerData, Margin, FontSize, TrainerModalData, Misc };

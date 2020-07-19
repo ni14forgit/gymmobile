@@ -7,7 +7,7 @@ import TrainerModal from "./TrainerModal";
 const Progress = ({ navigation }) => {
   return (
     <LessTemplate
-      Screen={TrainerModal}
+      Screen={TrainersList}
       onPressDrawer={navigation.toggleDrawer}
       title="Trainers"
     />

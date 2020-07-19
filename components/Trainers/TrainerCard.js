@@ -8,7 +8,7 @@ import { TextSizes } from "../../assets/Constants/BuddyConstants";
 import FilledButton from "../Button/FilledButton";
 import SmallFillButton from "../Button/SmallCard/SmallFillButton";
 
-const TrainerCard = ({ name, style, email, specialties }) => {
+const TrainerCard = ({ name, style, email, specialties, myBioOnPress }) => {
   return (
     <TouchableOpacity
       activeOpacity={TouchOpacity}
@@ -40,7 +40,8 @@ const TrainerCard = ({ name, style, email, specialties }) => {
           />
           {/* <FilledButton text="More about Joe" /> */}
           <View style={styles.buttons}>
-            <SmallFillButton text="More about Joe" />
+            <SmallFillButton text="My Bio" onPress={myBioOnPress} />
+            <SmallFillButton text="Let's Meet!" style={{ marginLeft: 5 }} />
           </View>
         </View>
       </View>
