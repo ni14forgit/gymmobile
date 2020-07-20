@@ -1,13 +1,13 @@
 import React from "react";
 import LessTemplate from "../models/LessTemplate";
-import TrainersList from "./TrainersList";
+import Configs from "./Configs";
 
 const Progress = ({ navigation }) => {
   return (
     <LessTemplate
-      Screen={TrainersList}
+      Screen={Configs}
       onPressDrawer={navigation.toggleDrawer}
-      title="Trainers"
+      title="Settings"
     />
   );
 };

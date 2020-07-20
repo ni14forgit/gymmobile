@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { View, StyleSheet, Dimensions, Modal } from "react-native";
 import BioModal from "../../components/Trainers/BioModal";
@@ -7,15 +7,11 @@ import ModifiableText from "../../components/Text/ModifiableText";
 import { TrainerModalData } from "../../assets/Constants/TrainerConstants";
 import Xbutton from "../../components/Button/Xbutton";
 
-// const SingleTrainerData = ["hi", "bi", "si"];
-
 const TrainerModal = ({ visible, toggleState }) => {
   const [page, setPage] = useState(0);
   const carousel = useRef();
 
   const renderItem = ({ item, index }) => {
-    console.log(item);
-    console.log(index);
     return (
       <BioModal
         isImage={item.isImage}
@@ -27,7 +23,12 @@ const TrainerModal = ({ visible, toggleState }) => {
 
   return (
     <View style={styles.outer}>
-      <Modal visible={visible} animationType="slide" transparent={true}>
+      <Modal
+        onShow={() => setPage(0)}
+        visible={visible}
+        animationType="slide"
+        transparent={true}
+      >
         <View style={styles.outer}>
           <View style={styles.container}>
             <View style={styles.xbutton}>
@@ -115,11 +116,6 @@ const styles = StyleSheet.create({
   outer: {
     justifyContent: "flex-end",
     flex: 1,
-    // flex: 1,
-    // marginTop: 20,
-    // height: "90%",
-    // borderColor: "red",
-    // borderWidth: 1,
   },
   xbutton: {
     position: "absolute",
@@ -127,15 +123,9 @@ const styles = StyleSheet.create({
     right: 20,
   },
   container: {
-    // justifyContent: "center",
     alignItems: "center",
     justifyContent: "center",
-    // justifyContent: "flex-end",
-    // marginTop: 20,
-    // flex: 1,
     backgroundColor: Color.white,
-    // borderColor: "red",
-    // borderWidth: 5,
     height: "86%",
     borderRadius: 10,
     shadowColor: "#000",
@@ -148,22 +138,15 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   main: {
-    // marginTop: 50,
     justifyContent: "space-evenly",
-    // height: "100%",
     width: "100%",
     // borderColor: "pink",
     // borderWidth: 2,
     alignItems: "center",
   },
   textContainer: {
-    // backgroundColor: Color.blue,
-    // borderColor: Color.blue,
-    // borderWidth: 2,
     height: "36%",
-    // marginTop: "5%",
     justifyContent: "space-evenly",
-    // textAlign: "center",
     width: Dimensions.get("window").width * 0.82 * 0.95,
     borderRadius: 15,
   },

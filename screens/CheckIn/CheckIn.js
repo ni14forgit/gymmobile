@@ -1,13 +1,13 @@
 import React from "react";
 import LessTemplate from "../models/LessTemplate";
-import TrainersList from "./TrainersList";
+import QRCode from "./QRCode";
 
 const Progress = ({ navigation }) => {
   return (
     <LessTemplate
-      Screen={TrainersList}
+      Screen={QRCode}
       onPressDrawer={navigation.toggleDrawer}
-      title="Trainers"
+      title="Daily Check In"
     />
   );
 };

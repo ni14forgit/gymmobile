@@ -5,6 +5,7 @@ import TrainerCard from "../../components/Trainers/TrainerCard";
 import { TrainerData, Margin } from "../../assets/Constants/TrainerConstants";
 import { FontType } from "../../assets/Constants";
 import ModifiableText from "../../components/Text/ModifiableText";
+import MeetModal from "./MeetModal";
 
 const Header = (title) => {
   return (
@@ -18,13 +19,18 @@ const Header = (title) => {
 };
 
 const Trainers = () => {
-  const [visible, setVisible] = useState(false);
-  const toggleState = () => {
-    setVisible(!visible);
+  const [bioVisible, setBioVisible] = useState(false);
+  const [meetVisible, setMeetVisible] = useState(false);
+  const toggleBioState = () => {
+    setBioVisible(!bioVisible);
+  };
+  const toggleMeetState = () => {
+    setMeetVisible(!meetVisible);
   };
   return (
     <View style={styles.container}>
-      <TrainerModal visible={visible} toggleState={toggleState} />
+      <TrainerModal visible={bioVisible} toggleState={toggleBioState} />
+      <MeetModal visible={meetVisible} toggleState={toggleMeetState} />
       <View>
         <FlatList
           ListHeaderComponent={Header("Our professional staff!")}
@@ -37,7 +43,8 @@ const Trainers = () => {
               style={styles.match}
               email={item.email}
               specialties={item.specialties}
-              myBioOnPress={toggleState}
+              myBioOnPress={toggleBioState}
+              myMeetOnPress={toggleMeetState}
             />
           )}
           keyExtractor={(item) => item.id}

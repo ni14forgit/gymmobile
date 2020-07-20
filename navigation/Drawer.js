@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import _ from "lodash";
 import {
   createDrawerNavigator,
@@ -7,14 +7,12 @@ import {
   DrawerItemList,
   DrawerItem,
 } from "@react-navigation/drawer";
-import MenuBar from "../components/Button/MenuButton";
 import { Dimension, Color, FontType } from "../assets/Constants";
 import Progress from "../screens/Progress/Progress";
 import Buddies from "../screens/Buddies/Buddies";
 import Trainers from "../screens/Trainers/Trainers";
-
-console.log("hi");
-console.log("this is cool");
+import CheckIn from "../screens/CheckIn/CheckIn";
+import Settings from "../screens/Settings/Settings";
 
 const Divider = () => {
   return <View style={styles.divider}></View>;
@@ -99,11 +97,9 @@ function MainNavigation() {
       <Drawer.Screen name="Progress" component={Progress} />
       <Drawer.Screen name="Buddies" component={Buddies} />
       <Drawer.Screen name="Trainers" component={Trainers} />
-      {/* <Drawer.Screen name="Check In" component={NotificationsScreen} />
-      <Drawer.Screen name="Rewards" component={NotificationsScreen} />
-
-      <Drawer.Screen name="Settings" component={NotificationsScreen} />
-      <Drawer.Screen name="Log Out" component={NotificationsScreen} /> */}
+      <Drawer.Screen name="Check In" component={CheckIn} />
+      {/* <Drawer.Screen name="Rewards" component={NotificationsScreen} /> */}
+      <Drawer.Screen name="Settings" component={Settings} />
     </Drawer.Navigator>
   );
 }
