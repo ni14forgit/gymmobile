@@ -19,7 +19,7 @@ const BasicQuestion = (props) => {
       paddingRight: 8,
     },
     decline: {
-      maxWidth: "45%",
+      // maxWidth: "45%",
       marginTop: "2%",
     },
     rowContainer: {
@@ -37,13 +37,21 @@ const BasicQuestion = (props) => {
         text={props.question}
       />
       <View style={styles.rowContainer}>
-        {props.options.map((num) => {
-          return <Times text={num} style={styles.inputnum} selected={false} />;
+        {props.options.map((num, ind) => {
+          return (
+            <Times
+              text={num}
+              style={styles.inputnum}
+              selected={!props.decline && props.ind === ind}
+              onPress={() => props.numPress(ind)}
+            />
+          );
         })}
         <Decline
           style={styles.decline}
-          selected={false}
+          selected={props.decline}
           text={Survey.options.decline}
+          onPress={props.declinePress}
         />
       </View>
     </View>

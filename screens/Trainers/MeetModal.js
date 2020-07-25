@@ -35,18 +35,18 @@ const MeetModal = ({ toggleState, visible, name }) => {
               <ModifiableText
                 family={FontType.medium}
                 size={FontType.question}
-                text={"Send an email invite to Joe and see if there's a fit!"}
+                text={
+                  "Have us send Joe an email notifying them about your interest in joint training!"
+                }
                 style={styles.centerText}
               />
-              {/* <ModifiableText
-                family={FontType.medium}
-                size={FontType.reallysmall}
-                text={props.subtitle}
-                style={styles.centerText}
-              />  */}
               <View style={styles.buttoncontainer}>
-                <OutlinedButton text="Later" onPress={toggleState} />
                 <FilledButton text="Send Invite!" onPress={toggleState} />
+                <OutlinedButton
+                  text="Later"
+                  onPress={toggleState}
+                  style={{ marginTop: 15, alignSelf: "center" }}
+                />
               </View>
             </View>
           </View>
@@ -98,11 +98,10 @@ const styles = StyleSheet.create({
     right: 20,
   },
   buttoncontainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    flexDirection: "column",
     // borderColor: "red",
     // borderWidth: 2,
-    width: "80%",
+    width: "50%",
   },
   openButton: {
     backgroundColor: "#F194FF",

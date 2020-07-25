@@ -22,7 +22,7 @@ const Account = (props) => {
           <UserInput placeholder="Password" />
         </View>
         <View style={styles.innerRow}>
-          <View style={styles.innerCol}>
+          <View>
             <ModifiableText
               text="I want to find fitness buddies"
               size={FontType.small}
@@ -64,7 +64,6 @@ const styles = StyleSheet.create({
     // borderColor: "red",
     // borderWidth: 2,
   },
-  innerCol: {},
   container: {
     flex: 1,
     alignSelf: "center",

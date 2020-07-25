@@ -11,11 +11,12 @@ const UserInput = (props) => {
         borderColor: Color.blue,
         borderWidth: 1,
         borderRadius: 10,
-        fontSize: FontType.namepassword,
+        fontSize: 20,
         color: Color.blue,
         paddingVertical: 10,
         paddingLeft: 10,
         width: "90%",
+        fontFamily: FontType.medium,
         marginVertical: "3%",
       }}
       placeholderTextColor="#334E8B"

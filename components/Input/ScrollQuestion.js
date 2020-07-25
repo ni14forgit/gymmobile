@@ -1,13 +1,7 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import ColoredOption from "../Input/Basic/ColoredOption";
-import {
-  Survey,
-  FontType,
-  Margin,
-  Statements,
-  Dimension,
-} from "../../assets/Constants";
+import { FontType } from "../../assets/Constants";
 import ModifiableText from "../Text/ModifiableText";
 
 const ScrollQuestion = (props) => {
@@ -24,6 +18,7 @@ const ScrollQuestion = (props) => {
       >
         {props.options.map((val, index) => {
           return <ColoredOption style={styles.optionspacing} text={val} />;
+          // return <ModifiableText text={val} />;
         })}
       </ScrollView>
     </View>

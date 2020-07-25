@@ -24,16 +24,13 @@ const Decline = (props) => {
       paddingHorizontal: Padding.input.horizButton,
       borderRadius: BorderRadius.button,
       borderColor: props.selected ? Color.blue : Color.grey,
-      borderWidth: props.selected ? Color.blue : 0,
-    },
-    container: {
-      maxWidth: "45%",
+      borderWidth: props.selected ? 1 : 0,
     },
   });
 
   return (
     <TouchableOpacity
-      style={[styles.container, props.style]}
+      style={[props.style]}
       activeOpacity={TouchOpacity}
       onPress={props.onPress}
     >

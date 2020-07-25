@@ -8,7 +8,7 @@ import { Color, BorderRadius } from "../../assets/Constants";
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 
-const ImgPicker = () => {
+const ImgPicker = ({ imgstyle }) => {
   const [pc, setPc] = useState();
   const verifyPermissions = async () => {
     const result = await Permissions.askAsync(
@@ -40,7 +40,7 @@ const ImgPicker = () => {
 
   return (
     <View style={styles.centered}>
-      <View style={styles.imagePreview}>
+      <View style={[styles.imagePreview, imgstyle]}>
         {pc ? (
           <Image style={styles.image} source={{ uri: pc }} />
         ) : (
@@ -70,9 +70,10 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     alignSelf: "center",
     width: "100%",
+    height: "100%",
     // borderColor: "red",
     // borderWidth: 2,
-    flex: 1,
+    // flex: 1,
     flexDirection: "column",
     justifyContent: "space-evenly",
   },
@@ -82,6 +83,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
+    // borderColor: "red",
+    // borderWidth: 10,
 
     borderColor: Color.blue,
     // marginBottom: "20%",
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
     // borderColor: "red",
     // borderWidth: 5,
     // paddingTop: "35%",
-
+    // marginTop: 15,
     flexDirection: "row",
     justifyContent: "space-evenly",
   },

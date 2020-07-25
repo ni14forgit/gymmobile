@@ -21,8 +21,9 @@ const ColoredOption = (props) => {
       backgroundColor: props.selected ? Color.blue : Color.white,
       paddingHorizontal: Padding.goalscharbutton.width,
       paddingVertical: Padding.goalscharbutton.height,
-      borderRadius: BorderRadius.goalschar,
-      borderColor: props.selected ? null : Color.blue,
+      // borderRadius: BorderRadius.goalschar,
+      borderRadius: 10,
+      borderColor: Color.blue,
       borderWidth: 2,
     },
   });

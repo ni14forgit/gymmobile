@@ -2,7 +2,7 @@ import React from "react";
 import LessTemplate from "../models/LessTemplate";
 import Configs from "./Configs";
 
-const Progress = ({ navigation }) => {
+const Settings = ({ navigation }) => {
   return (
     <LessTemplate
       Screen={Configs}
@@ -12,4 +12,4 @@ const Progress = ({ navigation }) => {
   );
 };
 
-export default Progress;
+export default Settings;
