@@ -1,18 +1,19 @@
 import React from "react";
-import { Image, StyleSheet, Dimensions, View } from "react-native";
-import TrainerModal from "../../../assets/Image/trainermodal.jpg";
-import TrainerNew from "../../../assets/Image/trainerimagenew.jpeg";
+import { StyleSheet, Dimensions, View } from "react-native";
 import { Color } from "../../../assets/Constants";
 import { Video } from "expo-av";
 import { Misc } from "../../../assets/Constants/TrainerConstants";
+import TrainerVideo from "../../../assets/Video/trainer.mp4";
+
+// {
+//   uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
+// }
 
 const BioVideo = ({ play }) => {
   return (
     <View>
       <Video
-        source={{
-          uri: "http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
-        }}
+        source={TrainerVideo}
         rate={1.0}
         volume={1.0}
         isMuted={false}

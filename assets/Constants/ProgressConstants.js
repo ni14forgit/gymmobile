@@ -1,4 +1,4 @@
-import { LegsSVG } from "../Icons/MiscSVG";
+import { LegsSVG, AbsSVG, ArmsSVG } from "../Icons/WorkoutSVG";
 const Titles = {
   track: {
     activities: "Input Growth Metrics",
@@ -33,14 +33,14 @@ const ExampleTrackSee = [
   {
     title: "Core",
     subtitle: "Planks, Situps",
-    svgicon: LegsSVG,
+    svgicon: AbsSVG,
     initialstate: false,
     subitems: ["Planks", "Situps"],
   },
   {
     title: "Arms",
     subtitle: "Push Ups, Dips +3 more",
-    svgicon: LegsSVG,
+    svgicon: ArmsSVG,
     initialstate: false,
     subitems: ["Push Ups", "Dips", "Close Grip Bench"],
   },

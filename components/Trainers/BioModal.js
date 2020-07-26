@@ -12,35 +12,15 @@ const BioModal = ({ isImage, source, play }) => {
   return (
     <View style={styles.container}>
       {isImage ? <BioImage /> : <BioVideo play={play} />}
-
-      {/* <View style={styles.textContainer}>
-        <ModifiableText
-          size={FontSize.biomodal}
-          text="Hi"
-          family={FontType.medium}
-        />
-      </View> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // borderWidth: 5,
-    // borderColor: "green",
-    // borderRadius: 20,
     alignItems: "center",
     justifyContent: "space-between",
   },
-  // textContainer: {
-  //   borderColor: Color.blue,
-  //   borderWidth: 2,
-  //   padding: 10,
-  //   width: 340,
-  //   height: 80,
-  //   borderBottomLeftRadius: 15,
-  //   borderBottomRightRadius: 15,
-  // },
 });
 
 export default BioModal;

@@ -4,7 +4,7 @@ import ModifiableText from "../../components/Text/ModifiableText";
 import { FontType, Color } from "../../assets/Constants";
 import FilledButton from "../../components/Button/FilledButton";
 import OutlinedButton from "../../components/Button/OutlinedButton";
-import Toast from "react-native-easy-toast";
+import Toaster from "../../components/Misc/Toaster";
 import {
   Regimen,
   Goals,
@@ -53,21 +53,7 @@ const Configs = () => {
 
   return (
     <View style={styles.container}>
-      <Toast
-        ref={toastRef}
-        style={{ backgroundColor: Color.grey, opacity: 0.8, borderRadius: 5 }}
-        position="top"
-        positionValue={0}
-        fadeInDuration={500}
-        fadeOutDuration={500}
-        opacity={0.8}
-        textStyle={{
-          color: Color.blue,
-          fontFamily: FontType.medium,
-          fontSize: FontType.small,
-        }}
-      />
-
+      <Toaster toastRef={toastRef} />
       <Regimen
         isVisible={visible.workoutregimen}
         xClose={() => xClose("workoutregimen")}

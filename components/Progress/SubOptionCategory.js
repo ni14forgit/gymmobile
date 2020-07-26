@@ -3,8 +3,7 @@ import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import ModifiableText from "../Text/ModifiableText";
 import IconTemplate from "../../assets/IconTemplate";
 import MainAccordionButton from "../Button/MainAccordionButton";
-import { LegsSVG } from "../../assets/Icons/MiscSVG";
-import { Dimensions } from "../../assets/Constants/ProgressConstants";
+import { LegsSVG } from "../../assets/Icons/WorkoutSVG";
 import { Color, FontType } from "../../assets/Constants";
 
 const SubOptionCategory = ({
