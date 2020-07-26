@@ -39,19 +39,19 @@ const AccordionList = ({ DATA, title }) => {
   );
 };
 
-{
-  DATA.map((val) => {
-    return (
-      <ActivitySubOptions
-        title={val.title}
-        subtitle={val.subtitle}
-        svgicon={val.svgicon}
-        subitems={val.subitems}
-        initialstate={val.initialstate}
-      />
-    );
-  });
-}
+// {
+//   DATA.map((val) => {
+//     return (
+//       <ActivitySubOptions
+//         title={val.title}
+//         subtitle={val.subtitle}
+//         svgicon={val.svgicon}
+//         subitems={val.subitems}
+//         initialstate={val.initialstate}
+//       />
+//     );
+//   });
+// }
 
 const styles = StyleSheet.create({
   container: {

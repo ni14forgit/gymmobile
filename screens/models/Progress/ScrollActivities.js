@@ -1,12 +1,12 @@
 import React, { useState, useCallback } from "react";
 import { View, SafeAreaView, StyleSheet, FlatList } from "react-native";
 // import { Dimensions } from "../../../assets/Constants";
-import { Icon, Margin, FontType } from "../../../assets/Constants";
+import { Icon } from "../../../assets/Constants";
 import { Dimensions } from "react-native";
 import ActivityCard from "../../../components/Input/ActivityCard";
-import ModifiableText from "../../../components/Text/ModifiableText";
-import { Titles } from "../../../assets/Constants/ProgressConstants";
 import FlatlistTitle from "../../../components/Text/FlatlistTitle";
+// import { useDispatch } from "react-redux";
+// import { setProgressTitle } from "../../../store/actions/progress";
 
 //DATA should be replaced with data PASSED in as a prop for specific needs
 DATA = Icon.activity;
@@ -26,9 +26,9 @@ function Item({ onPress, id, title, activityicon, selected, onSelect }) {
 const ScrollActivities = (props) => {
   const [selected, setSelected] = useState(new Map());
 
-  const onPress = () => {
-    props.onPress();
-  };
+  // const onPress = () => {
+  //   props.onPress();
+  // };
 
   const onSelect = useCallback(
     (id) => {
@@ -49,9 +49,12 @@ const ScrollActivities = (props) => {
           numColumns={2}
           renderItem={({ item }) => (
             <Item
-              onPress={onPress}
+              onPress={() => {
+                props.onPress(item.title);
+              }}
               id={item.id}
               title={item.title}
+              // xs
               activityicon={item.svg}
               selected={!!selected.get(item.id)}
               onSelect={onSelect}

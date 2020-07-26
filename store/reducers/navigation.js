@@ -4,16 +4,16 @@ const initialState = {
   backFunction: () => {},
 };
 
-const mealsReducer = (state = initialState, action) => {
+const navigationReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_BACKBUTTON:
       return { ...state, isBack: action.backButtonBool };
     case SET_BACKFUNCTION:
-      console.log("SET BACK FUNCTION");
+      // console.log("SET BACK FUNCTION");
       return { ...state, backFunction: action.backFunction };
     default:
       return state;
   }
 };
 
-export default mealsReducer;
+export default navigationReducer;

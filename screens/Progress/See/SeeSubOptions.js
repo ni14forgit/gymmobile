@@ -25,7 +25,6 @@ const SeeSubOptions = ({ navigation }) => {
   };
 
   const goBackPage = () => {
-    // console.log("goBackPage");
     const popAction = StackActions.pop(1);
     navigation.dispatch(popAction);
   };

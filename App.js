@@ -1,25 +1,14 @@
 import React, { useState } from "react";
-
-// import Spirit from "./models/Spirit";
-
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
-
-import IntroNavigator from "./navigation/IntroNavigator";
-import Drawer from "./navigation/Drawer";
-
-import MainTemplate from "./screens/models/MainTemplate";
-import BottomHeader from "./navigation/BottomHeader";
-
-import Progress from "./screens/Progress/Progress";
 
 import Test from "./Test";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStore, combineReducers } from "redux";
 import navigationReducer from "./store/reducers/navigation";
+import progressReducer from "./store/reducers/progress";
 import { Provider } from "react-redux";
-// import { createStackNavigator } from "@react-navigation/stack";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -31,6 +20,7 @@ const fetchFonts = () => {
 
 const rootReducer = combineReducers({
   navigation: navigationReducer,
+  progress: progressReducer,
 });
 const store = createStore(rootReducer);
 

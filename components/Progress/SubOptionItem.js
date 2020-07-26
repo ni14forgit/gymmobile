@@ -14,7 +14,7 @@ const SubOptionItem = ({ onPress, title }) => {
           family={FontType.medium}
           size={FontType.small}
         />
-        <SubMoreButton />
+        <SubMoreButton onPress={onPress} />
       </View>
     </TouchableWithoutFeedback>
   );

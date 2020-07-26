@@ -1,20 +1,21 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import ModifiableText from "../../../components/Text/ModifiableText";
-import { FontType } from "../../../assets/Constants";
 import { Titles } from "../../../assets/Constants/ProgressConstants";
 import ScrollActivities from "../../models/Progress/ScrollActivities";
 import { useDispatch } from "react-redux";
 import { setBackButton } from "../../../store/actions/navigation";
+import { setProgressTitle } from "../../../store/actions/progress";
 import { useFocusEffect } from "@react-navigation/native";
 const TrackActivities = (props) => {
-  const forward = () => {
-    props.navigation.navigate("subactivities");
+  const forward = (activitytitle) => {
+    props.navigation.navigate("subactivities", { title: activitytitle });
+    // console.log(title);
   };
 
   const dispatch = useDispatch();
   const setBackMenu = () => {
     dispatch(setBackButton(false));
+    dispatch(setProgressTitle("Progress"));
   };
   useFocusEffect(() => {
     setBackMenu();

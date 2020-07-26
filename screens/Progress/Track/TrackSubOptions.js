@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import AccordionList from "../../models/Progress/AccordionList";
-import ModifiableText from "../../../components/Text/ModifiableText";
-import { FontType } from "../../../assets/Constants";
 import {
   Titles,
   Margin,
@@ -15,13 +13,22 @@ import {
 } from "../../../store/actions/navigation";
 import { useFocusEffect } from "@react-navigation/native";
 import { StackActions } from "@react-navigation/native";
+import { setProgressTitle } from "../../../store/actions/progress";
 
-const TrackSubOptions = ({ navigation }) => {
+const TrackSubOptions = ({ route, navigation }) => {
   const dispatch = useDispatch();
+
+  const activityTitle = route.params.title;
+  console.log(route.params);
+  console.log(activityTitle);
 
   const setBackMenu = () => {
     dispatch(setBackButton(true));
     dispatch(setBackFunction(goBackPage));
+  };
+
+  const setTitle = () => {
+    dispatch(setProgressTitle(activityTitle));
   };
 
   const goBackPage = () => {
@@ -32,6 +39,7 @@ const TrackSubOptions = ({ navigation }) => {
 
   useFocusEffect(() => {
     setBackMenu();
+    setTitle();
   }, []);
   return (
     <View style={styles.container}>

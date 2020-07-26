@@ -7,14 +7,6 @@ import SubOptionCategory from "./SubOptionCategory";
 import SubOptionItem from "./SubOptionItem";
 import { Dimensions } from "../../assets/Constants/ProgressConstants";
 
-const DATA = [
-  { name: "Nathaniel Fitzgerald", points: "$3.45" },
-  { name: "Lawrence Fullter Fitzgerald", points: "$3.45" },
-  { name: "Jacob Mullins", points: "$3.45" },
-  { name: "Jesus Lewis", points: "$3.45" },
-  { name: "Johnny Marr", points: "$2.56" },
-];
-
 const { not, interpolate } = Animated;
 
 const ActivitySubOptions = ({
@@ -37,11 +29,6 @@ const ActivitySubOptions = ({
     0,
     subitems.length * Dimensions.suboptionitemheight
   );
-
-  // const bottomRadius = interpolate(transition, {
-  //   inputRange: [0, 16 / 400],
-  //   outputRange: [8, 0],
-  // });
 
   const openOptions = () => {
     setOpen((prev) => !prev);
