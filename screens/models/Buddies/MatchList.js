@@ -32,6 +32,7 @@ const MatchList = ({ DATA, onPress, title }) => {
           phone={item.phone}
           email={item.email}
           onPress={onPress}
+          photo={item.photo}
         />
       )}
       keyExtractor={(item) => item.id}

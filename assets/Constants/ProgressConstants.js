@@ -79,11 +79,13 @@ const Screens = {
   track: {
     ACTIVITIES: "activities",
     SUBACTIVITIES: "subactivities",
+    ENDINPUT: "endinput",
     TRACK: "track",
   },
   see: {
     ACTIVITIES: "activities",
     SUBACTIVITIES: "subactivities",
+    ENDRESULT: "endresult",
     SEE: "see",
   },
 };

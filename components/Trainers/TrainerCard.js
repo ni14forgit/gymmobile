@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import ModifiableText from "../Text/ModifiableText";
 import UserPic from "../Image/UserPic";
-import UserPhoto from "../../assets/Image/appleselfie.jpg";
+// import UserPhoto from "../../assets/Image/appleselfie.jpg";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Color, FontType, TouchOpacity } from "../../assets/Constants";
 import { TextSizes } from "../../assets/Constants/BuddyConstants";
-import FilledButton from "../Button/FilledButton";
 import SmallFillButton from "../Button/SmallCard/SmallFillButton";
 
 const TrainerCard = ({
@@ -15,6 +14,7 @@ const TrainerCard = ({
   specialties,
   myBioOnPress,
   myMeetOnPress,
+  photo,
 }) => {
   return (
     <TouchableOpacity
@@ -22,7 +22,7 @@ const TrainerCard = ({
       style={[styles.container, style]}
       onPress={myBioOnPress}
     >
-      <UserPic userprofile={UserPhoto} />
+      <UserPic userprofile={photo} />
       <View style={styles.description}>
         <View style={styles.toprow}>
           <ModifiableText

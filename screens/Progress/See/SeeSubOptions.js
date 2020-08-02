@@ -15,9 +15,15 @@ import {
   setBackButton,
   setBackFunction,
 } from "../../../store/actions/navigation";
+import { setProgressTitle } from "../../../store/actions/progress";
 
-const SeeSubOptions = ({ navigation }) => {
+const SeeSubOptions = ({ route, navigation }) => {
   const dispatch = useDispatch();
+  const activityTitle = route.params.title;
+
+  const forward = (activitytitle) => {
+    navigation.navigate("endresult", { title: activitytitle });
+  };
 
   const setBackMenu = () => {
     dispatch(setBackButton(true));
@@ -29,12 +35,22 @@ const SeeSubOptions = ({ navigation }) => {
     navigation.dispatch(popAction);
   };
 
+  const setTitle = () => {
+    dispatch(setProgressTitle(activityTitle));
+  };
+
   useFocusEffect(() => {
+    setTitle();
     setBackMenu();
   }, []);
   return (
     <View style={styles.container}>
-      <AccordionList title={Titles.see.options} DATA={ExampleTrackSee} />
+      <AccordionList
+        title={Titles.see.options}
+        DATA={ExampleTrackSee}
+        forward={forward}
+        // isTrack={false}
+      />
     </View>
   );
 };

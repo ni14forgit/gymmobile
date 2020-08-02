@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import BuddyList from "../../models/Buddies/BuddyList";
 import ProfileModal from "../../models/Buddies/ProfileModal";
 import {
-  ExampleProfiles,
+  FinderProfiles,
   Titles,
   ExampleMatchActivityData,
   Margin,
@@ -49,14 +49,14 @@ const BuddyFinder = () => {
         visible={modalVisible}
         toggle={toggleState}
       />
-
-      <Header title={Titles.finder.list} />
-
-      <MatchActivityList Activities={ExampleMatchActivityData} />
-
+      <View>
+        <Header title={Titles.finder.list} />
+        <MatchActivityList Activities={ExampleMatchActivityData} />
+      </View>
       <BuddyList
+        isFinder={true}
         title={Titles.finder.main}
-        DATA={ExampleProfiles}
+        DATA={FinderProfiles}
         onPress={viewProfile}
         style={styles.marginactivitylistfix}
       />
@@ -66,8 +66,12 @@ const BuddyFinder = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    justifyContent: "flex-start",
     flexDirection: "column",
+    // borderColor: "purple",
+    // borderWidth: 9,
+    // height: "100%",
   },
   profile: {
     marginBottom: 10,
@@ -80,7 +84,7 @@ const styles = StyleSheet.create({
     marginLeft: Margin.title.left,
   },
   marginactivitylistfix: {
-    marginTop: "-1%",
+    marginTop: "-2%",
   },
 });
 

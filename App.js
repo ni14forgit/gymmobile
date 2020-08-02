@@ -9,6 +9,7 @@ import { createStore, combineReducers } from "redux";
 import navigationReducer from "./store/reducers/navigation";
 import progressReducer from "./store/reducers/progress";
 import { Provider } from "react-redux";
+import toastReducer from "./store/reducers/toast";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -21,6 +22,7 @@ const fetchFonts = () => {
 const rootReducer = combineReducers({
   navigation: navigationReducer,
   progress: progressReducer,
+  toast: toastReducer,
 });
 const store = createStore(rootReducer);
 

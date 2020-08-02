@@ -23,8 +23,6 @@ function MyTabs({ DATA }) {
         },
       }}
     >
-      {/* <Tab.Screen name="Track" component={TrackNavigator} />
-      <Tab.Screen name="View" component={SeeNavigator} /> */}
       {DATA.map((val) => {
         return <Tab.Screen name={val.title} component={val.screen} />;
       })}

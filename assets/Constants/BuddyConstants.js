@@ -1,3 +1,13 @@
+import {
+  Neel,
+  Alice,
+  Jennifer,
+  Tim,
+  Nidhi,
+  Samuel,
+  Annie,
+} from "../Image/Users/UserImages";
+
 const ActivityTitles = [
   "Running",
   "Rock Climbing",
@@ -73,89 +83,114 @@ const ExampleMatchActivityData = [
   },
 ];
 
-const ExampleProfiles = [
+const FinderProfiles = [
   {
-    id: "joe",
-    name: "Joe Iyengar",
+    id: "alice",
+    name: "Alice Birkland",
+    email: "alice.brikland@gmail.com",
+    phone: "609-774-8230",
     matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    similarities: "Similarities: mental health, hardworking, night gymmer",
+    photo: Alice,
   },
   {
-    id: "nick",
-    name: "Nick Iyengar",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
+    id: "sam",
+    name: "Samuel Chan",
+    email: "samuel.chan@gmail.com",
+    phone: "609-774-8230",
+    matchedon: "Matched on Basketball",
+    photo: Samuel,
     similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+      "Similarities: maintaining healty body-fat percentage, hardworking, night gymmer",
   },
   {
-    id: "tim",
-    name: "Tim Iyengar",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    id: "jennifer",
+    name: "Jennifer Gray",
+    email: "jennifer.gray@duke.edu",
+    phone: "609-774-8230",
+    photo: Jennifer,
+    matchedon: "Matched on Rock Climbing, Yoga",
+    similarities: "Similarities: open to experiences, timely",
   },
   {
-    id: "Sara",
-    name: "Nishant Iyengar",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
-  },
-  {
-    id: "Joslyn",
-    name: "Joslyn Iyengar",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    id: "nidhi",
+    name: "Nidhi Khan",
+    email: "nidhi.khan@gmail.com",
+    phone: "609-774-8230",
+    photo: Nidhi,
+    matchedon: "Matched on Swimming, Yoga",
+    similarities: "Similaritiess: mental health, improve self-confidence",
   },
 ];
 
-const ExampleMatches = [
+const RequestProfiles = [
   {
-    id: "joe",
-    name: "Joe Iyengar",
-    email: "nishy.iyengar@duke.edu",
+    id: "august",
+    name: "August Rumsey",
+    email: "august.rumsey@gmail.com",
     phone: "609-774-8230",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    photo: Tim,
+    matchedon: "Matched on Biking",
+    similarities: "Similarities: mental health, timely",
   },
   {
-    id: "nick",
-    name: "Nick Iyengar",
-    email: "nishy.iyengar@duke.edu",
+    id: "neel",
+    name: "Neel Iyengar",
+    email: "neel.iyengar@gmail.com",
     phone: "609-774-8230",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    photo: Neel,
+    matchedon: "Matched on Yoga",
+    similarities: "Similarities: find community, lift greater amounts",
   },
   {
-    id: "tim",
-    name: "Tim Iyengar",
-    email: "nishy.iyengar@duke.edu",
+    id: "annie",
+    name: "Annie Le",
+    email: "annie.le@uva.edu",
     phone: "609-774-8230",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
+    photo: Annie,
+    matchedon: "Matched on Yoga",
     similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+      "Similarities: healty body-fat percentage, hardworking, improve self-confidence",
+  },
+];
+
+const MatchProfiles = [
+  {
+    id: "jennifer",
+    name: "Jennifer Gray",
+    email: "jennifer.gray@duke.edu",
+    phone: "609-774-8230",
+    photo: Jennifer,
+    matchedon: "Matched on Rock Climbing, Yoga",
+    similarities: "Similarities: open to experiences, timely",
   },
   {
-    id: "Sara",
-    name: "Nishant Iyengar",
-    email: "nishy.iyengar@duke.edu",
+    id: "august",
+    name: "August Rumsey",
+    email: "august.rumsey@gmail.com",
     phone: "609-774-8230",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
-    similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+    photo: Tim,
+    matchedon: "Matched on Biking",
+    similarities: "Similarities: mental health, timely",
   },
   {
-    id: "Joslyn",
-    name: "Joslyn Iyengar",
-    email: "nishy.iyengar@duke.edu",
+    id: "neel",
+    name: "Neel Iyengar",
+    email: "neel.iyengar@gmail.com",
     phone: "609-774-8230",
-    matchedon: "Matched on Biking, Rock Climbing, Yoga",
+    photo: Neel,
+    matchedon: "Matched on Yoga",
+    similarities: "Similarities: find community, lift greater amounts",
+  },
+  {
+    id: "annie",
+    name: "Annie Le",
+    email: "annie.le@uva.edu",
+    phone: "609-774-8230",
+    photo: Annie,
+    matchedon: "Matched on Yoga",
     similarities:
-      "Similar Interests: mental health, healty body-fat percentage, hardworking, night gymmer, seniors",
+      "Similarities: healty body-fat percentage, hardworking, improve self-confidence",
   },
 ];
 
@@ -176,9 +211,10 @@ export {
   BorderRadius,
   Padding,
   ExampleMatchActivityData,
-  ExampleProfiles,
+  FinderProfiles,
   TextSizes,
   Margin,
   Titles,
-  ExampleMatches,
+  MatchProfiles,
+  RequestProfiles,
 };

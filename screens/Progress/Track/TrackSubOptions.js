@@ -19,8 +19,8 @@ const TrackSubOptions = ({ route, navigation }) => {
   const dispatch = useDispatch();
 
   const activityTitle = route.params.title;
-  console.log(route.params);
-  console.log(activityTitle);
+  // console.log(route.params);
+  // console.log(activityTitle);
 
   const setBackMenu = () => {
     dispatch(setBackButton(true));
@@ -38,8 +38,8 @@ const TrackSubOptions = ({ route, navigation }) => {
   };
 
   useFocusEffect(() => {
-    setBackMenu();
     setTitle();
+    setBackMenu();
   }, []);
   return (
     <View style={styles.container}>

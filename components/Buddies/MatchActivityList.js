@@ -94,9 +94,11 @@ const MatchActivityList = ({ Activities }) => {
 
 const styles = StyleSheet.create({
   main: {
-    height: "13%",
+    // height: "10%",
     backgroundColor: Color.white,
-
+    marginVertical: 25,
+    // borderColor: "purple",
+    // borderWidth: 2,
     justifyContent: "center",
   },
 

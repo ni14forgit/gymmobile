@@ -7,9 +7,10 @@ import ScrollActivities from "../../models/Progress/ScrollActivities";
 import { useDispatch } from "react-redux";
 import { setBackButton } from "../../../store/actions/navigation";
 import { useFocusEffect } from "@react-navigation/native";
+import { setProgressTitle } from "../../../store/actions/progress";
 const SeeActivities = (props) => {
-  const forward = () => {
-    props.navigation.navigate("subactivities");
+  const forward = (activitytitle) => {
+    props.navigation.navigate("subactivities", { title: activitytitle });
   };
 
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const SeeActivities = (props) => {
   };
   useFocusEffect(() => {
     setBackMenu();
+    dispatch(setProgressTitle("Progress"));
   }, []);
 
   return (

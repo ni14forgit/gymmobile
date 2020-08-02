@@ -5,7 +5,7 @@ import ModifiableText from "../../../components/Text/ModifiableText";
 import { FontType } from "../../../assets/Constants";
 import { Margin } from "../../../assets/Constants/ProgressConstants";
 
-const AccordionList = ({ DATA, title }) => {
+const AccordionList = ({ DATA, title, forward }) => {
   const Header = () => {
     return (
       <ModifiableText
@@ -31,6 +31,7 @@ const AccordionList = ({ DATA, title }) => {
             svgicon={item.svgicon}
             subitems={item.subitems}
             initialstate={item.initialstate}
+            forward={forward}
           />
         )}
         keyExtractor={(item) => item.id}
@@ -38,20 +39,6 @@ const AccordionList = ({ DATA, title }) => {
     </View>
   );
 };
-
-// {
-//   DATA.map((val) => {
-//     return (
-//       <ActivitySubOptions
-//         title={val.title}
-//         subtitle={val.subtitle}
-//         svgicon={val.svgicon}
-//         subitems={val.subitems}
-//         initialstate={val.initialstate}
-//       />
-//     );
-//   });
-// }
 
 const styles = StyleSheet.create({
   container: {

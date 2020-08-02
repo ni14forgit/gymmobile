@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import MatchList from "../../models/Buddies/MatchList";
 import MatchModal from "../../models/Buddies/MatchModal";
 import {
-  ExampleMatches,
+  MatchProfiles,
   Titles,
 } from "../../../assets/Constants/BuddyConstants";
 
@@ -35,7 +35,7 @@ const BuddyMatches = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       <MatchModal
         name={name}
         phone={phone}
@@ -48,26 +48,26 @@ const BuddyMatches = () => {
 
       <MatchList
         title={Titles.buddies.yesmatches}
-        DATA={ExampleMatches}
+        DATA={MatchProfiles}
         onPress={viewProfile}
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  innerhalf: {
-    height: "50%",
-    width: "100%",
-    // flex: 1,
-  },
-  profile: {
-    marginBottom: 10,
-  },
-});
+// const styles = StyleSheet.create({
+//   // container: {
+//   //   flex: 1,
+//   //   flexDirection: "column",
+//   // },
+//   innerhalf: {
+//     height: "50%",
+//     width: "100%",
+//     // flex: 1,
+//   },
+//   profile: {
+//     marginBottom: 10,
+//   },
+// });
 
 export default BuddyMatches;

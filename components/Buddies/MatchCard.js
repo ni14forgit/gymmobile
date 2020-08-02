@@ -14,6 +14,7 @@ const MatchCard = ({
   phone,
   email,
   onPress,
+  photo,
 }) => {
   return (
     <TouchableOpacity
@@ -21,7 +22,7 @@ const MatchCard = ({
       style={[styles.container, style]}
       onPress={() => onPress(name, email, phone, similarities, matchedon)}
     >
-      <UserPic userprofile={UserPhoto} />
+      <UserPic userprofile={photo} />
       <View style={styles.description}>
         <View style={styles.toprow}>
           <ModifiableText

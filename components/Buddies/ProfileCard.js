@@ -8,14 +8,23 @@ import { TextSizes } from "../../assets/Constants/BuddyConstants";
 import SmallFillButton from "../Button/SmallCard/SmallFillButton";
 import SmallOutlineButton from "../Button/SmallCard/SmallOutlineButton";
 
-const ProfileCard = ({ matchedon, name, similarities, style, onPress }) => {
+const ProfileCard = ({
+  photo,
+  matchedon,
+  name,
+  similarities,
+  style,
+  onPress,
+  negativeAction,
+  positiveAction,
+}) => {
   return (
     <TouchableOpacity
       style={[styles.container, style]}
       activeOpacity={TouchOpacity}
       onPress={onPress}
     >
-      <UserPic userprofile={UserPhoto} />
+      <UserPic userprofile={photo} />
       <View style={styles.description}>
         <View style={styles.toprow}>
           <View style={styles.nametitle}>
@@ -27,8 +36,12 @@ const ProfileCard = ({ matchedon, name, similarities, style, onPress }) => {
             />
           </View>
           <View style={styles.buttons}>
-            <SmallOutlineButton text="No" />
-            <SmallFillButton text="Yes" />
+            <SmallOutlineButton onPress={negativeAction} text="No" />
+            <SmallFillButton
+              onPress={positiveAction}
+              style={{ marginLeft: 6 }}
+              text="Send"
+            />
           </View>
         </View>
         <View style={styles.bottomrow}>
@@ -89,14 +102,14 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
   },
   nametitle: {
-    width: "60%",
+    width: "55%",
     // borderColor: "blue",
     // borderWidth: 2,
   },
   buttons: {
     flexDirection: "row",
-    width: "40%",
-    justifyContent: "space-evenly",
+    // width: "45%",
+    justifyContent: "flex-end",
     // borderColor: "blue",
     // borderWidth: 2,
   },

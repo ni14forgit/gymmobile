@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-// import ModifiableText from "../../../components/Text/ModifiableText";
-// import ProfileCard from "../../../components/Buddies/ProfileCard";
-// import { FontType } from "../../../assets/Constants";
 import BuddyList from "../../models/Buddies/BuddyList";
 import ProfileModal from "../../models/Buddies/ProfileModal";
 import {
-  ExampleProfiles,
+  RequestProfiles,
   Titles,
 } from "../../../assets/Constants/BuddyConstants";
 
@@ -28,7 +25,7 @@ const BuddyRequests = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       <ProfileModal
         name={name}
         matchedon={matchedon}
@@ -39,23 +36,15 @@ const BuddyRequests = () => {
 
       <BuddyList
         title={Titles.requests}
-        DATA={ExampleProfiles}
+        DATA={RequestProfiles}
         onPress={viewProfile}
+        isFinder={false}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  innerhalf: {
-    height: "50%",
-    width: "100%",
-    // flex: 1,
-  },
   profile: {
     marginBottom: 10,
   },

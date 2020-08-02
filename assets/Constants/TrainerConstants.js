@@ -1,29 +1,42 @@
 import TrainerModalImage from "../Image/trainerimagenew.jpeg";
+import {
+  Amanda,
+  Andrea,
+  Calvin,
+  Lily,
+  Oliver,
+} from "../Image/Trainers/TrainerImages";
 const TrainerData = [
   {
-    name: "Joe Smith",
+    name: "Amanda Harrison",
     email: "joe.smith@duke.edu",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
+    photo: Amanda,
   },
   {
-    name: "Alice Smith",
+    name: "Oliver Quincy",
     email: "alice.smith@duke.edu",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
+    photo: Oliver,
   },
   {
-    name: "Alice Smith",
+    name: "Lily Shah",
     email: "alice.smith@duke.edu",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
+    photo: Lily,
   },
+
   {
-    name: "Joe Smith",
+    name: "Andrea Hernandez",
     email: "joe.smith@duke.edu",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
+    photo: Andrea,
   },
   {
-    name: "Alice Smith",
+    name: "Calvin Wang",
     email: "alice.smith@duke.edu",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
+    photo: Calvin,
   },
 ];
 

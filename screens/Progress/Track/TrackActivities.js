@@ -9,16 +9,15 @@ import { useFocusEffect } from "@react-navigation/native";
 const TrackActivities = (props) => {
   const forward = (activitytitle) => {
     props.navigation.navigate("subactivities", { title: activitytitle });
-    // console.log(title);
   };
 
   const dispatch = useDispatch();
   const setBackMenu = () => {
     dispatch(setBackButton(false));
-    dispatch(setProgressTitle("Progress"));
   };
   useFocusEffect(() => {
     setBackMenu();
+    dispatch(setProgressTitle("Progress"));
   }, []);
 
   return (

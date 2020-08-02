@@ -15,6 +15,7 @@ const ActivitySubOptions = ({
   svgicon,
   initialstate,
   subitems,
+  forward,
 }) => {
   const [open, setOpen] = useState(initialstate);
   const transition = useTransition(
@@ -48,7 +49,7 @@ const ActivitySubOptions = ({
       </TouchableWithoutFeedback>
       <Animated.View style={[styles.items, { height }]}>
         {subitems.map((val) => {
-          return <SubOptionItem title={val} />;
+          return <SubOptionItem title={val} onPress={forward} />;
         })}
       </Animated.View>
     </>

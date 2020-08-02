@@ -45,6 +45,7 @@ const Trainers = () => {
               specialties={item.specialties}
               myBioOnPress={toggleBioState}
               myMeetOnPress={toggleMeetState}
+              photo={item.photo}
             />
           )}
           keyExtractor={(item) => item.id}

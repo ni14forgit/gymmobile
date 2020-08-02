@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import ModifiableText from "../../components/Text/ModifiableText";
-import { FontType, Color } from "../../assets/Constants";
+import { FontType } from "../../assets/Constants";
 import FilledButton from "../../components/Button/FilledButton";
 import OutlinedButton from "../../components/Button/OutlinedButton";
-import Toaster from "../../components/Misc/Toaster";
 import {
   Regimen,
   Goals,
@@ -13,6 +12,7 @@ import {
   Password,
   Photo,
 } from "./SettingsModal";
+import { useSelector } from "react-redux";
 
 const Configs = () => {
   const [visible, setVisible] = useState({
@@ -23,8 +23,7 @@ const Configs = () => {
     password: false,
     photo: false,
   });
-
-  const toastRef = useRef(null);
+  const showToast = useSelector((state) => state.toast.toastFunction);
 
   const mainToggle = (item) => {
     setVisible({ ...visible, [item]: !visible[item] });
@@ -47,13 +46,8 @@ const Configs = () => {
     }
   };
 
-  const showToast = (text) => {
-    toastRef.current.show(text, 3000);
-  };
-
   return (
     <View style={styles.container}>
-      <Toaster toastRef={toastRef} />
       <Regimen
         isVisible={visible.workoutregimen}
         xClose={() => xClose("workoutregimen")}

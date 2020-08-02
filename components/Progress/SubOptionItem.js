@@ -7,14 +7,14 @@ import SubMoreButton from "../Button/SubMoreButton";
 
 const SubOptionItem = ({ onPress, title }) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback onPress={() => onPress(title)}>
       <View style={styles.container}>
         <ModifiableText
           text={title}
           family={FontType.medium}
           size={FontType.small}
         />
-        <SubMoreButton onPress={onPress} />
+        <SubMoreButton onPress={() => onPress(title)} />
       </View>
     </TouchableWithoutFeedback>
   );
