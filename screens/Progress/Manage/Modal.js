@@ -51,8 +51,20 @@ const ModalScreen = (props) => {
                 width="50%"
               />
               <View style={styles.buttoncontainer}>
-                <OutlinedButton text="Delete" onPress={props.toggle} />
-                <FilledButton text="Cancel" onPress={props.toggle} />
+                <OutlinedButton
+                  text={props.secondaryOptionTitle}
+                  onPress={
+                    props.isAdd
+                      ? props.toggle
+                      : () => props.actualDelete(props.id)
+                  }
+                />
+                <FilledButton
+                  text={props.mainOptionTitle}
+                  onPress={
+                    props.isAdd ? () => props.actualAdd(props.id) : props.toggle
+                  }
+                />
               </View>
             </View>
           </View>

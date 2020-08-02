@@ -21,20 +21,60 @@ const Header = (title) => {
 const Trainers = () => {
   const [bioVisible, setBioVisible] = useState(false);
   const [meetVisible, setMeetVisible] = useState(false);
-  const toggleBioState = () => {
+  const [name, setName] = useState("");
+  const [specialties, setSpecialties] = useState("");
+  const [trainerdata, setTrainerData] = useState(TrainerData);
+
+  const openBioState = (name, specialties) => {
+    setName(name.split(" ")[0]);
+    setSpecialties(specialties);
     setBioVisible(!bioVisible);
   };
-  const toggleMeetState = () => {
+  const openMeetState = (name) => {
+    setName(name.split(" ")[0]);
     setMeetVisible(!meetVisible);
   };
+
+  const closeBioState = () => {
+    setBioVisible(!bioVisible);
+  };
+  const closeMeetState = () => {
+    setMeetVisible(!meetVisible);
+  };
+
+  const sendInvite = () => {
+    const updatedTrainerData = [...trainerdata];
+
+    console.log(updatedTrainerData);
+
+    for (var i = 0; i < updatedTrainerData.length; i++) {
+      if (updatedTrainerData[i].name.includes(name)) {
+        updatedTrainerData[i].sent = true;
+        break;
+      }
+    }
+
+    setTrainerData(updatedTrainerData);
+  };
+
   return (
     <View style={styles.container}>
-      <TrainerModal visible={bioVisible} toggleState={toggleBioState} />
-      <MeetModal visible={meetVisible} toggleState={toggleMeetState} />
+      <TrainerModal
+        visible={bioVisible}
+        toggleState={closeBioState}
+        name={name}
+        specialties={specialties}
+      />
+      <MeetModal
+        name={name}
+        visible={meetVisible}
+        toggleState={closeMeetState}
+        sendInvite={sendInvite}
+      />
       <View>
         <FlatList
           ListHeaderComponent={Header("Our professional staff!")}
-          data={TrainerData}
+          data={trainerdata}
           showsVerticalScrollIndicator={false}
           numColumns={1}
           renderItem={({ item }) => (
@@ -43,9 +83,10 @@ const Trainers = () => {
               style={styles.match}
               email={item.email}
               specialties={item.specialties}
-              myBioOnPress={toggleBioState}
-              myMeetOnPress={toggleMeetState}
+              myBioOnPress={() => openBioState(item.name, item.specialties)}
+              myMeetOnPress={() => openMeetState(item.name)}
               photo={item.photo}
+              sent={item.sent}
             />
           )}
           keyExtractor={(item) => item.id}

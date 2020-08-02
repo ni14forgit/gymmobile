@@ -29,11 +29,13 @@ const SubOptionCategory = ({
               family={FontType.bold}
               size={FontType.small}
             />
-            <ModifiableText
-              text={subtitle}
-              family={FontType.regular}
-              size={13}
-            />
+            {subtitle ? (
+              <ModifiableText
+                text={subtitle}
+                family={FontType.regular}
+                size={13}
+              />
+            ) : null}
           </View>
         </View>
         <MainAccordionButton onPress={onPress} stretched={stretched} />

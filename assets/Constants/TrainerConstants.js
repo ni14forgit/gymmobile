@@ -9,34 +9,39 @@ import {
 const TrainerData = [
   {
     name: "Amanda Harrison",
-    email: "joe.smith@duke.edu",
+    email: "amanda.harris@gmail.com",
     specialties: "Specialties: Cycling, Endurance, Nutrition",
     photo: Amanda,
+    sent: false,
   },
   {
     name: "Oliver Quincy",
-    email: "alice.smith@duke.edu",
-    specialties: "Specialties: Cycling, Endurance, Nutrition",
+    email: "oliver.quincy@yahoo.com",
+    specialties: "Specialties: Nutrition, Yoga",
     photo: Oliver,
+    sent: false,
   },
   {
     name: "Lily Shah",
-    email: "alice.smith@duke.edu",
-    specialties: "Specialties: Cycling, Endurance, Nutrition",
+    email: "lily.shah@gmail.com",
+    specialties: "Specialties: Powerlifting",
     photo: Lily,
+    sent: false,
   },
 
   {
     name: "Andrea Hernandez",
-    email: "joe.smith@duke.edu",
-    specialties: "Specialties: Cycling, Endurance, Nutrition",
+    email: "andrea.hernandez@gmail.com",
+    specialties: "Specialties: Aerobics, Mental Health",
     photo: Andrea,
+    sent: false,
   },
   {
     name: "Calvin Wang",
-    email: "alice.smith@duke.edu",
-    specialties: "Specialties: Cycling, Endurance, Nutrition",
+    email: "calvin.wang@gmail.com",
+    specialties: "Specialties: Bodyweight Workouts",
     photo: Calvin,
+    sent: false,
   },
 ];
 

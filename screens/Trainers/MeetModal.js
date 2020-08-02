@@ -15,7 +15,11 @@ import OutlinedButton from "../../components/Button/OutlinedButton";
 import IconTemplate from "../../assets/IconTemplate";
 import { SoccerSVG } from "../../assets/Icons/ActivitySVG";
 
-const MeetModal = ({ toggleState, visible, name }) => {
+const MeetModal = ({ toggleState, visible, name, sendInvite }) => {
+  const combinedFunction = () => {
+    toggleState();
+    sendInvite();
+  };
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -35,13 +39,11 @@ const MeetModal = ({ toggleState, visible, name }) => {
               <ModifiableText
                 family={FontType.medium}
                 size={FontType.question}
-                text={
-                  "Have us send Joe an email notifying them about your interest in joint training!"
-                }
+                text={`Have us send ${name} an email notifying them about your interest in joint training!`}
                 style={styles.centerText}
               />
               <View style={styles.buttoncontainer}>
-                <FilledButton text="Send Invite!" onPress={toggleState} />
+                <FilledButton text="Send Invite!" onPress={combinedFunction} />
                 <OutlinedButton
                   text="Later"
                   onPress={toggleState}

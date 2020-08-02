@@ -51,7 +51,7 @@ const QRCode = () => {
           style={styles.image}
           source={QRImage}
         ></Image>
-        <FilledButton onPress={toggle} />
+        <FilledButton text="Demo Check In" onPress={toggle} />
       </View>
     </View>
   );

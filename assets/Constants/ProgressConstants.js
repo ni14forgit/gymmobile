@@ -10,7 +10,7 @@ const Titles = {
     options: "Expand Selections",
   },
   manage: {
-    main: "Manage Activities",
+    main: "My Activities",
     suggested: "Suggested",
   },
 };

@@ -15,6 +15,7 @@ const TrainerCard = ({
   myBioOnPress,
   myMeetOnPress,
   photo,
+  sent,
 }) => {
   return (
     <TouchableOpacity
@@ -48,11 +49,21 @@ const TrainerCard = ({
           {/* <FilledButton text="More about Joe" /> */}
           <View style={styles.buttons}>
             <SmallFillButton text="My Bio" onPress={myBioOnPress} />
-            <SmallFillButton
-              text="Let's Meet!"
-              style={{ marginLeft: 5 }}
-              onPress={myMeetOnPress}
-            />
+            {sent ? (
+              <ModifiableText
+                size={16}
+                family={FontType.medium}
+                text="Invite Sent!"
+                numlines={1}
+                style={{ marginLeft: 5 }}
+              />
+            ) : (
+              <SmallFillButton
+                text="Let's Meet!"
+                style={{ marginLeft: 5 }}
+                onPress={myMeetOnPress}
+              />
+            )}
           </View>
         </View>
       </View>

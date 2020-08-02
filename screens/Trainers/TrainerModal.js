@@ -7,7 +7,7 @@ import ModifiableText from "../../components/Text/ModifiableText";
 import { TrainerModalData } from "../../assets/Constants/TrainerConstants";
 import Xbutton from "../../components/Button/Xbutton";
 
-const TrainerModal = ({ visible, toggleState }) => {
+const TrainerModal = ({ visible, toggleState, name, specialties }) => {
   const [page, setPage] = useState(0);
   const carousel = useRef();
 
@@ -85,13 +85,13 @@ const TrainerModal = ({ visible, toggleState }) => {
               />
               <View style={styles.textContainer}>
                 <ModifiableText
-                  text="Hi, my name is Alice and I've been a trainer with Duke for the past three years! Excited to meet you all! Excited to meet you all!"
+                  text={`Hi, my name's ${name} and I've been a trainer with Duke for the past three years! Excited to meet you all!`}
                   size={FontType.reallysmall}
                   family={FontType.medium}
                   style={{ textAlign: "center" }}
                 />
                 <ModifiableText
-                  text="Specialties: Cycling, Endurance, Nutrition"
+                  text={specialties}
                   size={FontType.reallysmall}
                   family={FontType.medium}
                   style={{ textAlign: "center" }}
