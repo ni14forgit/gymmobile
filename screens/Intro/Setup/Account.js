@@ -38,8 +38,8 @@ const Account = (props) => {
         </View>
       </View>
       <QNavigator
-        selected={0}
-        numpages={4}
+        selected={4}
+        numpages={5}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.done}
         style={styles.qnavigator}

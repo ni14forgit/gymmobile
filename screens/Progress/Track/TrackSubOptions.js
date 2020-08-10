@@ -19,12 +19,14 @@ const TrackSubOptions = ({ route, navigation }) => {
   const dispatch = useDispatch();
 
   const activityTitle = route.params.title;
-  // console.log(route.params);
-  // console.log(activityTitle);
 
   const setBackMenu = () => {
     dispatch(setBackButton(true));
     dispatch(setBackFunction(goBackPage));
+  };
+
+  const forward = (activitytitle) => {
+    navigation.navigate("endinput", { title: activitytitle });
   };
 
   const setTitle = () => {
@@ -43,7 +45,11 @@ const TrackSubOptions = ({ route, navigation }) => {
   }, []);
   return (
     <View style={styles.container}>
-      <AccordionList title={Titles.track.options} DATA={ExampleTrackSee} />
+      <AccordionList
+        title={Titles.track.options}
+        DATA={ExampleTrackSee}
+        forward={forward}
+      />
     </View>
   );
 };

@@ -10,6 +10,9 @@ const GatherInfo = (props) => {
     props.navigation.navigate(Screens.GOALSCHAR);
   };
 
+  const [years, setYears] = useState(-1);
+  const [timesaweek, setTimesaweek] = useState(-1);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.tophalf}>
@@ -17,12 +20,16 @@ const GatherInfo = (props) => {
           <BasicQuestion
             question={Survey.question.timesaweek}
             options={Survey.options.numbers7plus}
+            ind={timesaweek}
+            numPress={setTimesaweek}
           />
         </View>
         <View style={styles.basicquestion}>
           <BasicQuestion
             question={Survey.question.years}
             options={Survey.options.numbers5plus}
+            ind={years}
+            numPress={setYears}
           />
         </View>
         <View style={styles.slider}>
@@ -44,7 +51,7 @@ const GatherInfo = (props) => {
       </View>
       <QNavigator
         selected={0}
-        numpages={4}
+        numpages={5}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         nextScreenFunc={forward}

@@ -32,8 +32,8 @@ const ProfilePic = (props) => {
       </View>
 
       <QNavigator
-        selected={0}
-        numpages={4}
+        selected={3}
+        numpages={5}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         nextScreenFunc={forward}

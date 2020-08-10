@@ -17,6 +17,7 @@ const ProfileCard = ({
   onPress,
   negativeAction,
   positiveAction,
+  positiveTitle,
 }) => {
   return (
     <TouchableOpacity
@@ -40,7 +41,7 @@ const ProfileCard = ({
             <SmallFillButton
               onPress={positiveAction}
               style={{ marginLeft: 6 }}
-              text="Send"
+              text={positiveTitle}
             />
           </View>
         </View>

@@ -58,11 +58,11 @@ const SliderInput = (props) => {
           />
         </View>
       </View>
-      <Decline
+      {/* <Decline
         style={styles.decline}
         selected={false}
         text={Survey.options.decline}
-      />
+      /> */}
     </View>
   );
 };

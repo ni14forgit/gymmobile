@@ -39,6 +39,7 @@ const BuddyRequests = () => {
         DATA={RequestProfiles}
         onPress={viewProfile}
         isFinder={false}
+        positiveTitle="Accept"
       />
     </View>
   );

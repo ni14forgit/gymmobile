@@ -1,7 +1,5 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import SeeNavigator from "../screens/Progress/See/SeeNavigator";
-import TrackNavigator from "../screens/Progress/Track/TrackNavigator";
 import { Color, FontType } from "../assets/Constants";
 
 const Tab = createMaterialTopTabNavigator();
@@ -22,6 +20,8 @@ function MyTabs({ DATA }) {
           height: 5,
         },
       }}
+      // swipe should be enabled!
+      swipeEnabled={false}
     >
       {DATA.map((val) => {
         return <Tab.Screen name={val.title} component={val.screen} />;

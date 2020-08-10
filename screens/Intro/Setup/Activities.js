@@ -70,8 +70,8 @@ const Activities = (props) => {
         />
       </View>
       <QNavigator
-        selected={0}
-        numpages={4}
+        selected={2}
+        numpages={5}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         style={styles.qnavigator}

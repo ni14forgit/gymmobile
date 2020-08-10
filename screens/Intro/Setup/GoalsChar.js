@@ -16,13 +16,16 @@ const GoalsChar = (props) => {
         options={Survey.options.goals}
         question={Survey.question.goals}
       />
+
       <ScrollQuestion
         options={Survey.options.characteristics}
         question={Survey.question.characteristics}
+        style={{ marginTop: 15 }}
       />
+
       <QNavigator
-        selected={0}
-        numpages={4}
+        selected={1}
+        numpages={5}
         textbuttontext={Statements.button.back}
         filledbuttontext={Statements.button.continue}
         nextScreenFunc={forward}

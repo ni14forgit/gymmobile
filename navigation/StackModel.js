@@ -15,7 +15,11 @@ function StackModel({ SCREENS, InitialScreenName }) {
       {SCREENS.map((ScreenData) => {
         // console.log(ScreenData);
         return (
-          <Stack.Screen name={ScreenData.name} component={ScreenData.screen} />
+          <Stack.Screen
+            name={ScreenData.name}
+            options={{ gestureEnabled: false }}
+            component={ScreenData.screen}
+          />
         );
       })}
       {/* <Stack.Screen name="Account" component={Account} /> */}

@@ -23,7 +23,7 @@ const BasicQuestion = (props) => {
       marginTop: "2%",
     },
     rowContainer: {
-      marginTop: "2%",
+      marginTop: 10,
       flexDirection: "row",
       flexWrap: "wrap",
     },
@@ -42,17 +42,18 @@ const BasicQuestion = (props) => {
             <Times
               text={num}
               style={styles.inputnum}
-              selected={!props.decline && props.ind === ind}
+              // selected={!props.decline && props.ind === ind}
+              selected={props.ind === ind}
               onPress={() => props.numPress(ind)}
             />
           );
         })}
-        <Decline
+        {/* <Decline
           style={styles.decline}
           selected={props.decline}
           text={Survey.options.decline}
           onPress={props.declinePress}
-        />
+        /> */}
       </View>
     </View>
   );

@@ -8,7 +8,14 @@ import { useSelector } from "react-redux";
 import { Image, View } from "react-native";
 import Nobuddies from "../../../assets/Image/nobuddies.png";
 
-const BuddyList = ({ isFinder, DATA, onPress, title, style }) => {
+const BuddyList = ({
+  isFinder,
+  DATA,
+  onPress,
+  title,
+  style,
+  positiveTitle,
+}) => {
   const [profiles, setProfiles] = useState(DATA);
   const showToast = useSelector((state) => state.toast.toastFunction);
 
@@ -79,6 +86,7 @@ const BuddyList = ({ isFinder, DATA, onPress, title, style }) => {
                   ? () => declineFinder(item.id, item.name)
                   : () => declineRequest(item.id, item.name)
               }
+              positiveTitle={positiveTitle}
             />
           )}
           keyExtractor={(item) => item.id}

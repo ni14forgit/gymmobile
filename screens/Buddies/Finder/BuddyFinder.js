@@ -59,6 +59,7 @@ const BuddyFinder = () => {
         DATA={FinderProfiles}
         onPress={viewProfile}
         style={styles.marginactivitylistfix}
+        positiveTitle="Send"
       />
     </View>
   );

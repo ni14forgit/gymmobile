@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import ColoredOption from "../Input/Basic/ColoredOption";
 import { FontType } from "../../assets/Constants";
 import ModifiableText from "../Text/ModifiableText";
 
 const ScrollQuestion = (props) => {
+  var initialData = {};
+
+  const [selection, setSelection] = useState(initialData);
+
+  const toggleItem = (index) => {
+    setSelection({ ...selection, [index]: !selection[index] });
+  };
+  useEffect(() => {
+    var toBecome = {};
+    for (var i; i < props.options.length; i++) {
+      toBecome[[i]] = true;
+    }
+    initialData = toBecome;
+  });
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.style]}>
       <ModifiableText
         size={FontType.question}
         family={FontType.medium}
@@ -17,8 +31,14 @@ const ScrollQuestion = (props) => {
         contentContainerStyle={styles.scrollcontainer}
       >
         {props.options.map((val, index) => {
-          return <ColoredOption style={styles.optionspacing} text={val} />;
-          // return <ModifiableText text={val} />;
+          return (
+            <ColoredOption
+              style={styles.optionspacing}
+              onPress={() => toggleItem(index)}
+              selected={selection[index]}
+              text={val}
+            />
+          );
         })}
       </ScrollView>
     </View>

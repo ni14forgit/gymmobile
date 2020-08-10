@@ -6,6 +6,7 @@ import IntroNavigator from "./navigation/IntroNavigator";
 const Test = () => {
   return (
     <View style={styles.container}>
+      {/* <IntroNavigator /> */}
       <Drawer />
     </View>
   );
