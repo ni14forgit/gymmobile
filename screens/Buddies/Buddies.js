@@ -8,6 +8,7 @@ const DATA = [
   { title: "Finder", screen: FinderNavigator },
   { title: "Requests", screen: RequestsNavigator },
   { title: "Buddies", screen: MatchesNavigator },
+  { title: "Buddies2", screen: MatchesNavigator },
 ];
 
 const Buddies = ({ navigation }) => {

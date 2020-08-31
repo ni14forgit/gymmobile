@@ -10,7 +10,8 @@ function MyTabs({ DATA }) {
       tabBarOptions={{
         labelStyle: {
           fontFamily: FontType.bold,
-          fontSize: FontType.tabnavigator,
+          // fontSize: FontType.tabnavigator,
+          fontSize: 16,
           textTransform: "none",
         },
         inactiveTintColor: Color.grey,
